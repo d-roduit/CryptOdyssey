@@ -1,2 +1,2 @@
-# Odyssey
-Play Odyssey and pass the levels to get to Eternal Knowledge !
+# CryptOdyssey
+Play CryptOdyssey and raise as much money as possible to virtually become the crypto master!
