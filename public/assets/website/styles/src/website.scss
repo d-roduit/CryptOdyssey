@@ -1,3 +1,8 @@
+@use 'fonts';
+@use 'reset';
+@use 'colors';
+@use 'partials/header';
+@use 'partials/footer';
 @use 'partials/index';
 @use 'partials/about-us';
 @use 'partials/contact';

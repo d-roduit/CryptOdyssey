@@ -1,13 +1,42 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/game/styles/dist/website.css">
+    <link rel="stylesheet" href="assets/website/styles/dist/website.css">
+    <link rel="stylesheet" href="assets/website/styles/vendor/fontawesome-5.15.3/css/all.min.css">
     <title>Contact</title>
 </head>
 <body>
-    <h1>Contact</h1>
+    <header>
+        <div id="header-innercontainer">
+            <a id="cryptOdysseyLink" href="/">
+                <h1>Crypt<img id="coin-image" src="assets/website/images/coin.svg" alt="coin">dyssey</h1>
+            </a>
+            
+            <nav>
+                <button id="hamburger-button"><i class="fas fa-bars"></i></button>
+                <div id="dark-overlay"></div>
+                <ul id="navigation-drawer">
+                    <li><a href="cryptocurrencies.html"><i class="fab fa-ethereum"></i>Cryptocurrencies</a></li>
+                    <li><a href="about-us.html"><i class="fas fa-users"></i>Team</a></li>
+                    <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i>Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Contact</h1>
+    </main>
+
+    <footer>
+        <div id="socialMedias-container">
+            <a id="github-icon" href="https://github.com/d-roduit/CryptOdyssey" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="assets/website/js/navigationDrawer.js"></script>
 </body>
 </html>

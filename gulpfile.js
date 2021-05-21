@@ -18,23 +18,23 @@ const { parallel } = require('gulp');
 const { exec } = require('child_process');
 const nodemon = require('nodemon');
 
+const cssRoutes = {
+    game: {
+        src: 'public/assets/game/styles/src/',
+        dist: 'public/assets/game/styles/dist/',
+    },
+    website: {
+        src: 'public/assets/website/styles/src/',
+        dist: 'public/assets/website/styles/dist/',
+    },
+};
+
 async function startAutoReloadServer() {
     nodemon({});
 }
 
 async function compileSass() {
-    const routes = {
-        game: {
-            src: 'public/assets/game/styles/src/',
-            dist: 'public/assets/game/styles/dist/',
-        },
-        website: {
-            src: 'public/assets/website/styles/src/',
-            dist: 'public/assets/website/styles/dist/',
-        },
-    };
-
-    exec(`npx sass ${routes.game.src}:${routes.game.dist} ${routes.website.src}:${routes.website.dist} --watch --style=compressed --source-map`);
+    exec(`npx sass ${cssRoutes.game.src}:${cssRoutes.game.dist} ${cssRoutes.website.src}:${cssRoutes.website.dist} --watch --style=compressed --source-map`);
 }
 
 exports.default = parallel(compileSass, startAutoReloadServer);

@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/game/styles/dist/website.css">
+    <link rel="stylesheet" href="assets/website/styles/dist/website.css">
+    <link rel="stylesheet" href="assets/website/styles/vendor/fontawesome-5.15.3/css/all.min.css">
     <link rel="stylesheet" href="assets/game/styles/dist/game.css">
-    <title>Jeu</title>
+    <title>CryptOdyssey</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="cryptocurrencies.html">Cryptomonnaies</a></li>
-            <li><a href="about-us.html">À propos</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <!--
     <h1>Jeu</h1>
     <p><strong>Prix des cryptos</strong></p>
     <ul>
@@ -25,8 +20,60 @@
         <li>aave: <span id="aaveSpan"></span></li>
         <li>enjincoin: <span id="enjincoinSpan"></span></li>
         <li>uniswap: <span id="uniswapSpan"></span></li>
-    </ul>
+    </ul> -->
 
-    <script src="assets/website/js/index.js" type="module"></script>
+    <header>
+        <div id="header-innercontainer">
+            <a id="cryptOdysseyLink" href="/">
+                <h1>Crypt<img id="coin-image" src="assets/website/images/coin.svg" alt="coin">dyssey</h1>
+            </a>
+            
+            <nav>
+                <button id="hamburger-button"><i class="fas fa-bars"></i></button>
+                <div id="dark-overlay"></div>
+                <ul id="navigation-drawer">
+                    <li><a href="cryptocurrencies.html"><i class="fab fa-ethereum"></i>Cryptocurrencies</a></li>
+                    <li><a href="about-us.html"><i class="fas fa-users"></i>Team</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="section-one">
+            <div id="game-container">
+                <canvas id="game-canvas"></canvas>
+                <div id="game-interface-layer">
+                    <div id="play-screen">
+                        <div class="content">
+                            <h2>Start your crypto adventure now !</h2>
+                            <p>Play CryptOdyssey and raise as much money as possible to virtually become the crypto master! </p>
+                            <button id="play-game">Play CryptOdyssey</button>
+                            <button id="only-on-computer" disabled="disabled">CryptOdyssey is only playable on computer</button>
+                        </div>
+                        <div class="blur-background"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section-two">
+            <h3>What is CryptOdyssey ?</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis eum recusandae rerum, odio, illum culpa quasi atque rem adipisci esse magni quod, vitae non at eius exercitationem alias laboriosam commodi.</p>
+            
+            <h3>How to play ?</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis eum recusandae rerum, odio, illum culpa quasi atque rem adipisci.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div id="socialMedias-container">
+            <a id="github-icon" href="https://github.com/d-roduit/CryptOdyssey" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="assets/website/js/navigationDrawer.js"></script>
+    <script src="assets/website/js/index.js"></script>
+    <!-- <script src="assets/game/js/game.js" type="module"></script> -->
 </body>
 </html>
