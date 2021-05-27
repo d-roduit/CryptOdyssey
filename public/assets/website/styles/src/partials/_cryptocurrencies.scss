@@ -1,0 +1,89 @@
+#cryptocurrencies-main {
+    background: rgb(var(--primary-300));
+    background: linear-gradient(180deg, rgb(var(--primary-400)) 0%, rgb(var(--primary-100)) 100%);
+
+    color: white;
+
+    padding: calc(30px + 1vw) 25px calc(50px + 1vw) 25px;
+
+    @media screen and (min-width: 768px) {
+        background: linear-gradient(180deg, rgb(var(--primary-400)) 0%, rgb(var(--primary-100)) 100%);
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: calc(30px + 1vw) 25px calc(80px + 1vw) 25px;
+    }
+
+    h2{
+        font-family: 'pixelfont', sans-serif;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h3{
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .cryptoInformation{
+        text-align: center;
+        max-width: 900px;
+        line-height: 25px;
+        margin: auto;
+    }
+
+    .description{
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .layout{
+        display: flex;
+        flex-direction: column;
+
+        .reverse{
+            flex-direction: row-reverse;
+            p {
+                text-align: right;
+                padding-left: 10px;
+            }
+        }
+
+        .container {
+            display: flex;
+            margin: 20px 20%;
+            box-shadow: 0 9px 19px rgba(0,0,0,0.15), 
+                        0 8px 6px rgba(0,0,0,0.22);
+            border-radius: 5px;
+            border:1px solid white;
+            
+    
+            .container__image {
+                width: 128px;
+                text-align: center;
+                align-self: center;
+            }
+            
+            .container__feature {
+                padding: 15px;
+                flex: 1;
+
+                .cryptoName{
+                    font-weight: bold;
+                    font-size: 18px;
+                    padding-top: 10px;
+                }
+                
+                .cryptoDescription{
+                    padding-top: 10px;
+                    line-height: 20px;
+                    padding-bottom: 10px;
+                    
+                }
+            }
+        }
+    }
+}
