@@ -2,7 +2,7 @@
 
     #game-interface-layer {
         
-        #play-screen {
+        #presentation-screen {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -11,19 +11,21 @@
             width: 100%;
 
             .content {
+                
                 @media screen and (min-width: 1200px) {
                     position: absolute;
                     z-index: 2;
+                    padding: 20px;
                 }
 
                 h2 {
-                    font-family: 'pixelfont', sans-serif;
-                    font-size: 18px;
+                    font-family: 'Press Start 2P', sans-serif;
+                    font-size: 20px;
         
                     text-shadow: 2px 2px rgb(var(--warning-300));
         
                     @media screen and (min-width: 560px) {
-                        font-size: 25px;
+                        font-size: 30px;
                     }
                 }
         
@@ -91,7 +93,7 @@
                 height: 100%;
                 width: 100%;
                 
-                background-image: url('../../images/play-screen-background.jpg');
+                background-image: url('../../images/presentation-screen-background.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;

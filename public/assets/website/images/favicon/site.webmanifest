@@ -1,0 +1,22 @@
+{
+    "name": "CryptOdyssey",
+    "short_name": "CryptOdyssey",
+    "description": "CryptOdyssey is a game centered around the world of cryptocurrencies. Thanks to trading and the many ways to earn crypto, you will discover the trader in you and perhaps be able to become the richest virtually!",
+    "icons": [
+        {
+            "src": "assets/website/images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/website/images/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#123363",
+    "background_color": "#123363",
+    "display": "standalone",
+    "dir": "ltr",
+    "lang": "en"
+}
