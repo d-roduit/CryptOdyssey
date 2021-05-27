@@ -14,6 +14,7 @@
     "rules": {
         "no-console":"off",
         "indent": ["error", 4],
-        "quote-props": ["error", "consistent"]
+        "quote-props": ["error", "consistent"],
+        "import/extensions": ["error", "ignorePackages"]
     }
 }

@@ -1,5 +1,5 @@
 const express = require('express');
-const sse = require('./serverSideEvents');
+const sse = require('./serverSideEvents.js');
 
 const app = express();
 

@@ -1,0 +1,172 @@
+/*-------------------------------------------
+    BUTTON
+-------------------------------------------*/
+
+%pixel-border {
+    border-width: 4px;
+    border-style: solid;
+    border-image-slice: 2;
+    border-image-width: 2;
+    border-image-repeat: stretch;
+    border-image-source: var(--border-image-source-normal);
+    border-image-outset: 2;
+}
+
+%pixel-font {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 14px;
+}
+
+%pixel-padding {
+    padding: 12px 18px;
+}
+
+%pixel-button {
+    position: relative;
+
+    @extend %pixel-padding;
+
+    @extend %pixel-font;
+    color: white;
+    text-align: center;
+
+    -webkit-appearance: none;
+    background-color: var(--bg-color-normal);
+
+    @extend %pixel-border;
+
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    &:hover {
+        background-color: var(--bg-color-hover);
+        
+        /* Disabled because there is a white-border glitch when changing the border-image-source on Firefox */
+        // border-image-source: var(--border-image-source-hover);
+    }
+
+    &::after {
+        position: absolute;
+        top: -4px;
+        bottom: -4px;
+        left: -4px;
+        right: -4px;
+        content: "";
+        box-shadow: inset -4px -4px var(--bg-color-after);
+    }
+
+    &:active::after {
+        box-shadow: inset 4px 4px var(--bg-color-after);
+    }
+}
+
+button.btn-pixel-normal {
+    --bg-color-normal: rgb(var(--secondary-300));
+    --bg-color-hover: rgb(var(--secondary-400));
+    --bg-color-after: rgb(var(--secondary-500));
+    --border-image-source-normal: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(233, 233, 233)" /></svg>');
+    --border-image-source-hover: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(225, 225, 225)" /></svg>');
+
+    @extend %pixel-button;
+
+    color: black;
+}
+
+button.btn-pixel-primary {
+    --bg-color-normal: rgb(var(--primary-game-300));
+    --bg-color-hover: rgb(var(--primary-game-400));
+    --bg-color-after: rgb(var(--primary-game-500));
+    --border-image-source-normal: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(101, 175, 255)" /></svg>');
+    --border-image-source-hover: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(50, 149, 255)" /></svg>');
+    
+    @extend %pixel-button;
+}
+
+button.btn-pixel-success {
+    --bg-color-normal: rgb(var(--success-300));
+    --bg-color-hover: rgb(var(--success-400));
+    --bg-color-after: rgb(var(--success-500));
+    --border-image-source-normal: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(0, 216, 122)" /></svg>');
+    --border-image-source-hover: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(0, 191, 107)" /></svg>');
+    
+    @extend %pixel-button;
+}
+
+button.btn-pixel-warning {
+    --bg-color-normal: rgb(var(--warning-300));
+    --bg-color-hover: rgb(var(--warning-400));
+    --bg-color-after: rgb(var(--warning-500));
+    --border-image-source-normal: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(255, 217, 0)" /></svg>');
+    --border-image-source-hover: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(255, 195, 0)" /></svg>');
+    
+    @extend %pixel-button;
+}
+
+button.btn-pixel-danger {
+    --bg-color-normal: rgb(var(--danger-300));
+    --bg-color-hover: rgb(var(--danger-400));
+    --bg-color-after: rgb(var(--danger-500));
+    --border-image-source-normal: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(237, 118, 105)" /></svg>');
+    --border-image-source-hover: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(234, 97, 83)" /></svg>');
+    
+    @extend %pixel-button;
+}
+
+button.btn-pixel-info {
+    --bg-color-normal: rgb(var(--info-300));
+    --bg-color-hover: rgb(var(--info-400));
+    --bg-color-after: rgb(var(--info-500));
+    --border-image-source-normal: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(105, 182, 253)" /></svg>');
+    --border-image-source-hover: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(80, 169, 252)" /></svg>');
+    
+    @extend %pixel-button;
+}
+
+/*-------------------------------------------
+    LABEL
+-------------------------------------------*/
+label.label-pixel {
+    @extend %pixel-font;    
+}
+
+/*-------------------------------------------
+    INPUT, SELECT 
+-------------------------------------------*/
+
+input.input-pixel,
+select.select-pixel {
+    --border-image-source-normal: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(255, 255, 255)" /></svg>');
+
+    @extend %pixel-border;
+    @extend %pixel-padding;
+    @extend %pixel-font;
+
+    background: none;
+
+    color: white;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+/*-------------------------------------------
+    FIELDSET
+-------------------------------------------*/
+fieldset.fieldset-pixel {
+    --border-image-source-normal: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(255, 255, 255)" /></svg>');
+    
+    @extend %pixel-border;
+
+    padding: 15px 20px;
+    
+    legend {
+        padding: 0px 10px;
+
+        @extend %pixel-font;
+        color: white;
+    }
+}

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/website/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/website/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/website/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/website/images/favicon/site.webmanifest">
     <link rel="stylesheet" href="assets/website/styles/dist/website.css">
     <link rel="stylesheet" href="assets/website/styles/vendor/fontawesome-5.15.3/css/all.min.css">
     <link rel="stylesheet" href="assets/game/styles/dist/game.css">
@@ -33,7 +37,7 @@
             <div id="game-container">
                 <canvas id="game-canvas"></canvas>
                 <div id="game-interface-layer">
-                    <!-- <div id="play-screen">
+                    <div id="presentation-screen">
                         <div class="content">
                             <h2>Start your crypto adventure now !</h2>
                             <p>Play CryptOdyssey and raise as much money as possible to virtually become the crypto master! </p>
@@ -42,10 +46,25 @@
                         </div>
                         <div class="blur-background"></div>
                     </div>
-                    <div class="marketstore">
-                        //code ici
+
+                    <!-- <div id="user-info-screen">
+                        <div>
+                            <div>
+                                <label for="player-name"></label>
+                                <input type="text" id="player-name">
+                            </div>
+                            <div>
+                                <label for=""></label>
+                                <div>
+                                    <select name="playerCountry" id="player-country"></select>
+                                    <button id="autodetect-country">Auto-Detect</button>
+                                </div>
+                            </div>
+                            <button>Play</button>
+                        </div>
                     </div> -->
-                     <div id="play-screen">
+
+                    <!-- <div id="presentation-screen">
                         <ul>
                             <li>bitcoin: <span id="bitcoinSpan"></span> Coin</li>
                             <li>ethereum: <span id="ethereumSpan"></span> Coin</li>
@@ -98,6 +117,7 @@
 
     <script src="assets/website/js/navigationDrawer.js"></script>
     <script src="assets/website/js/index.js"></script>
-    <script src="assets/game/js/game.js"></script>
+    <!-- <script src="assets/game/js/LocationManager.js" type="module"></script> -->
+    <!-- <script src="assets/game/js/game.js"></script> -->
 </body>
 </html>
