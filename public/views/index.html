@@ -37,7 +37,7 @@
             <div id="game-container">
                 <canvas id="game-canvas"></canvas>
                 <div id="game-interface-layer">
-                    <div id="presentation-screen">
+                   <!--  <div id="presentation-screen">
                         <div class="content">
                             <h2>Start your crypto adventure now !</h2>
                             <p>Play CryptOdyssey and raise as much money as possible to virtually become the crypto master! </p>
@@ -45,7 +45,7 @@
                             <button id="only-on-computer" disabled="disabled">CryptOdyssey is only playable on computer</button>
                         </div>
                         <div class="blur-background"></div>
-                    </div>
+                    </div> -->
 
                     <!-- <div id="user-info-screen">
                         <div>
@@ -57,12 +57,96 @@
                                 <label for=""></label>
                                 <div>
                                     <select name="playerCountry" id="player-country"></select>
-                                    <button id="autodetect-country">Auto-Detect</button>
+                                    <button class="btn-pixel-normal" id="autodetect-country">Auto-Detect</button>
                                 </div>
                             </div>
-                            <button>Play</button>
+                            <button class="btn-pixel-warning">Play</button>
                         </div>
                     </div> -->
+
+                    <div class="market-interface">
+                        <fieldset class="fieldset-pixel market">
+                            <legend>Market</legend>
+                            <table id="market-table">
+                                <tr>
+                                    <td>From</td>
+                                    <td></td>
+                                    <td>To</td>
+                                </tr>
+                                <tr>
+                                    <td class="cryptoicon"></td>
+                                    <td id="exchangeto">=></td>
+                                    <td class="cryptoicon"></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="inputcoin" type="number"></td>
+                                     <td></td>
+                                    <td class="inputcoin">0.512</td>
+                                </tr>
+                             </table>
+                             <div class="exchange">
+                                <button class="btn-pixel-normal btnexchange"> Exchange</button>
+                            </div>
+                        </fieldset>
+    
+                        <fieldset  class="fieldset-pixel" style="margin-top: 20px;">
+                            <legend>Wallet</legend>
+                            <table id="wallet-table">
+                                <tr>
+                                  <td id="iconone" class="crypto-logo">
+                                      <img id="btc" class="walleticon" draggable="true" src="assets/website/images/coin.svg" alt="placeholder">
+                                    </td>
+                                  <td class="amounts">
+                                      <p class="coin-value">10000 Coin</p>
+                                      <p class="crypto-amount">0.025 BTC</p>
+                                  </td>
+                                  <td id="icontwo" class="crypto-logo">
+                                      <img id="eth" class="walleticon" draggable="true" src="assets/website/images/coin.svg" alt="placeholder">
+                                    </td>
+                                  <td class="amounts">
+                                  <span class="coin-value">
+                                      500 Coin
+                                    </span>  
+                                    <span class="crypto-amount">
+                                          (0.33 ETH)
+                                    </span> 
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td id="iconthree" class="crypto-logo">
+                                      <img id="ada" class="walleticon" draggable="true" src="assets/website/images/coin.svg" alt="placeholder">
+                                    </td>
+                                  <td class="amounts">
+                                      <p class="coin-value">11000 Coin</p>
+                                      <p class="crypto-amount">952 CHSB</p>
+                                    </td>
+                                    <td id="iconfour" class="crypto-logo">
+                                        <img id="chsb" class="walleticon" draggable="true" src="assets/website/images/coin.svg" alt="placeholder">
+                                    </td>
+                                     <td class="amounts">
+                                      <p class="coin-value">10000 Coin</p>
+                                      <p class="crypto-amount">998.3 USDT</p>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                  <td id="iconfive" class="crypto-logo">
+                                      <img id="usdt" class="walleticon" draggable="true" src="assets/website/images/coin.svg" alt="placeholder">
+                                    </td>
+                                  <td class="amounts">
+                                      <p class="coin-value">1300 Coin</p>
+                                      <p class="crypto-amount">12.4 ADA</p>
+                                  </td>
+                                  <td id="iconsix" class="crypto-logo">
+                                      <img id="coin" class="walleticon" draggable="true" src="assets/website/images/coin.svg" alt="placeholder">
+                                    </td>
+                                     <td class="amounts">
+                                      <p class="coin-value">10000 Coin</p>
+                                      <p class="crypto-amount">998.3 USDT</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </div>
 
                     <!-- <div id="presentation-screen">
                         <ul>
@@ -119,5 +203,7 @@
     <script src="assets/website/js/index.js"></script>
     <!-- <script src="assets/game/js/LocationManager.js" type="module"></script> -->
     <!-- <script src="assets/game/js/game.js"></script> -->
+
+    <script src="assets/website/js/dragdrop.js"></script>
 </body>
 </html>
