@@ -13,7 +13,7 @@ export default {
     },
     DZ: {
         flag: '🇩🇿',
-        name: 'lgeria',
+        name: 'Algeria',
     },
     AS: {
         flag: '🇦🇸',

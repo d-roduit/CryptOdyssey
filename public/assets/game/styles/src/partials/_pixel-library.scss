@@ -1,7 +1,3 @@
-/*-------------------------------------------
-    BUTTON
--------------------------------------------*/
-
 %pixel-border {
     border-width: 4px;
     border-style: solid;
@@ -14,11 +10,11 @@
 
 %pixel-font {
     font-family: 'Press Start 2P', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 %pixel-padding {
-    padding: 12px 18px;
+    padding: 10px 15px;
 }
 
 %pixel-button {
@@ -62,6 +58,31 @@
         box-shadow: inset 4px 4px var(--bg-color-after);
     }
 }
+
+/*-------------------------------------------
+    GENERAL CLASSES
+-------------------------------------------*/
+.font-pixel {
+    @extend %pixel-font;
+}
+
+.border-pixel {
+    @extend %pixel-border;
+}
+
+.padding-pixel {
+    @extend %pixel-padding;
+}
+
+.style-pixel {
+    @extend %pixel-font;
+    @extend %pixel-border;
+    @extend %pixel-padding;
+}
+
+/*-------------------------------------------
+    BUTTON
+-------------------------------------------*/
 
 button.btn-pixel-normal {
     --bg-color-normal: rgb(var(--secondary-300));
@@ -126,13 +147,6 @@ button.btn-pixel-info {
 }
 
 /*-------------------------------------------
-    LABEL
--------------------------------------------*/
-label.label-pixel {
-    @extend %pixel-font;    
-}
-
-/*-------------------------------------------
     INPUT, SELECT 
 -------------------------------------------*/
 
@@ -150,6 +164,13 @@ select.select-pixel {
 
     &:focus {
         outline: none;
+    }
+}
+
+select.select-pixel {
+    option {
+        font-size: 15px;
+        font-family: sans-serif;
     }
 }
 

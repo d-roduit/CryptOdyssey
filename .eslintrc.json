@@ -12,9 +12,10 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "no-console":"off",
+        "no-console": "off",
         "indent": ["error", 4],
         "quote-props": ["error", "consistent"],
-        "import/extensions": ["error", "ignorePackages"]
+        "import/extensions": ["error", "ignorePackages"],
+        "import/prefer-default-export": "off"
     }
 }

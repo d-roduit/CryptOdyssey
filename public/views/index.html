@@ -37,34 +37,44 @@
             <div id="game-container">
                 <canvas id="game-canvas"></canvas>
                 <div id="game-interface-layer">
-                   <!--  <div id="presentation-screen">
+                    <div id="presentation-screen">
                         <div class="content">
                             <h2>Start your crypto adventure now !</h2>
-                            <p>Play CryptOdyssey and raise as much money as possible to virtually become the crypto master! </p>
-                            <button id="play-game">Play CryptOdyssey</button>
+                            <p>Play CryptOdyssey and raise as much money as possible to virtually become the crypto master !</p>
+                            <button id="start-game">Play CryptOdyssey</button>
                             <button id="only-on-computer" disabled="disabled">CryptOdyssey is only playable on computer</button>
                         </div>
                         <div class="blur-background"></div>
-                    </div> -->
+                    </div>
 
-                    <!-- <div id="user-info-screen">
-                        <div>
-                            <div>
-                                <label for="player-name"></label>
-                                <input type="text" id="player-name">
-                            </div>
-                            <div>
-                                <label for=""></label>
-                                <div>
-                                    <select name="playerCountry" id="player-country"></select>
-                                    <button class="btn-pixel-normal" id="autodetect-country">Auto-Detect</button>
+                    <div id="player-info-screen">
+                        <div class="content">
+                            <fieldset id="player-info-screen-fieldset" class="fieldset-pixel">
+                                <legend id="player-info-screen-fieldset-legend" class="font-pixel">Player info</legend>
+                                <div class="input-container">
+                                    <label for="player-name" class="font-pixel">Set Your Player Name</label>
+                                    <input type="text" id="player-name" class="input-pixel" placeholder="Player">
+                                    <p id="player-name-error-message" class="error-message font-pixel">Player name must be between 3 and 20 characters.</p>
                                 </div>
-                            </div>
-                            <button class="btn-pixel-warning">Play</button>
+                                <div class="input-container">
+                                    <label for="" id="player-country-label" class="font-pixel">Choose Your Flag</label>
+                                    <div class="player-country-container">
+                                        <div id="player-country-select" class="style-pixel">
+                                            <p id="player-country" class="font-pixel"></p>
+                                            <i class="fas fa-chevron-down"></i>
+                                            <ol id="options-container"></ol>
+                                        </div>
+                                        <button id="autodetect-country" class="btn-pixel-normal">Auto-Detect</button>
+                                    </div>
+                                    <p id="player-country-error-message" class="error-message font-pixel">Please choose an answer among those proposed.</p>
+                                </div>
+                            </fieldset>
+                            <button id="play-game" class="btn-pixel-warning">Play</button>
                         </div>
-                    </div> -->
+                        <div class="blur-background"></div>
+                    </div>
 
-                    <div class="market-interface">
+                    <!-- <div class="market-interface">
                         <fieldset class="fieldset-pixel market">
                             <legend>Market</legend>
                             <table id="market-table">
@@ -146,7 +156,7 @@
                                 </tr>
                             </table>
                         </fieldset>
-                    </div>
+                    </div> -->
 
                     <!-- <div id="presentation-screen">
                         <ul>
@@ -156,13 +166,13 @@
                             <li>tether: <span id="tetherSpan"></span> Coin</li>
                             <li>cardano: <span id="cardanoSpan"></span> Coin</li>
                         </ul>
-                    </div> 
+                    </div>  -->
                 </div>
             </div>
         </section>
         <section id="section-two">
             <h3>What is CryptOdyssey ?</h3>
-            <p>CryptOdyssey is a game centered around the world of cryptocurrencies. Thanks to trading and the many ways to earn crypto, you will discover the trader in you and perhaps be able to become the richest virtually!</p>
+            <p>CryptOdyssey is a game centered around the world of cryptocurrencies. Thanks to trading and the many ways to earn crypto, you will discover the trader in you and perhaps be able to become the richest virtually !</p>
             
             <h3>How to play ?</h3>
             <table id="keyboard-settings">
@@ -182,7 +192,7 @@
                     </tr>
                     <tr>
                         <td class="keys"><kbd>Shift</kbd></td>
-                        <td class="action">Inventory</td>
+                        <td class="action">Wallet</td>
                     </tr>
                     <tr>
                         <td class="keys"><kbd>Esc</kbd></td>
@@ -201,9 +211,7 @@
 
     <script src="assets/website/js/navigationDrawer.js"></script>
     <script src="assets/website/js/index.js"></script>
-    <!-- <script src="assets/game/js/LocationManager.js" type="module"></script> -->
-    <!-- <script src="assets/game/js/game.js"></script> -->
-
+    <script src="assets/game/js/game.js" type="module"></script>
     <script src="assets/website/js/dragdrop.js"></script>
 </body>
 </html>
