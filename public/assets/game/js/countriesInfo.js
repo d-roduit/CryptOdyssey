@@ -1,1030 +1,1030 @@
 export default {
+    DEFAULT: {
+        flag: 'assets/game/images/flags/DEFAULT.png',
+        name: 'Atlantis',
+    },
     AF: {
-        flag: '🇦🇫',
+        flag: 'assets/game/images/flags/AF.png',
         name: 'Afghanistan',
     },
     AX: {
-        flag: '🇦🇽',
+        flag: 'assets/game/images/flags/AX.png',
         name: 'Åland Islands',
     },
     AL: {
-        flag: '🇦🇱',
+        flag: 'assets/game/images/flags/AL.png',
         name: 'Albania',
     },
     DZ: {
-        flag: '🇩🇿',
+        flag: 'assets/game/images/flags/DZ.png',
         name: 'Algeria',
     },
     AS: {
-        flag: '🇦🇸',
+        flag: 'assets/game/images/flags/AS.png',
         name: 'American Samoa',
     },
     AD: {
-        flag: '🇦🇩',
+        flag: 'assets/game/images/flags/AD.png',
         name: 'Andorra',
     },
     AO: {
-        flag: '🇦🇴',
+        flag: 'assets/game/images/flags/AO.png',
         name: 'Angola',
     },
     AI: {
-        flag: '🇦🇮',
+        flag: 'assets/game/images/flags/AI.png',
         name: 'Anguilla',
     },
     AQ: {
-        flag: '🇦🇶',
+        flag: 'assets/game/images/flags/AQ.png',
         name: 'Antarctica',
     },
     AG: {
-        flag: '🇦🇬',
+        flag: 'assets/game/images/flags/AG.png',
         name: 'Antigua & Barbuda',
     },
     AR: {
-        flag: '🇦🇷',
+        flag: 'assets/game/images/flags/AR.png',
         name: 'Argentina',
     },
     AM: {
-        flag: '🇦🇲',
+        flag: 'assets/game/images/flags/AM.png',
         name: 'Armenia',
     },
     AW: {
-        flag: '🇦🇼',
+        flag: 'assets/game/images/flags/AW.png',
         name: 'Aruba',
     },
     AC: {
-        flag: '🇦🇨',
+        flag: 'assets/game/images/flags/AC.png',
         name: 'Ascension Island',
     },
     AU: {
-        flag: '🇦🇺',
+        flag: 'assets/game/images/flags/AU.png',
         name: 'Australia',
     },
     AT: {
-        flag: '🇦🇹',
+        flag: 'assets/game/images/flags/AT.png',
         name: 'Austria',
     },
     AZ: {
-        flag: '🇦🇿',
+        flag: 'assets/game/images/flags/AZ.png',
         name: 'Azerbaijan',
     },
     BS: {
-        flag: '🇧🇸',
+        flag: 'assets/game/images/flags/BS.png',
         name: 'Bahamas',
     },
     BH: {
-        flag: '🇧🇭',
+        flag: 'assets/game/images/flags/BH.png',
         name: 'Bahrain',
     },
     BD: {
-        flag: '🇧🇩',
+        flag: 'assets/game/images/flags/BD.png',
         name: 'Bangladesh',
     },
     BB: {
-        flag: '🇧🇧',
+        flag: 'assets/game/images/flags/BB.png',
         name: 'Barbados',
     },
     BY: {
-        flag: '🇧🇾',
+        flag: 'assets/game/images/flags/BY.png',
         name: 'Belarus',
     },
     BE: {
-        flag: '🇧🇪',
+        flag: 'assets/game/images/flags/BE.png',
         name: 'Belgium',
     },
     BZ: {
-        flag: '🇧🇿',
+        flag: 'assets/game/images/flags/BZ.png',
         name: 'Belize',
     },
     BJ: {
-        flag: '🇧🇯',
+        flag: 'assets/game/images/flags/BJ.png',
         name: 'Benin',
     },
     BM: {
-        flag: '🇧🇲',
+        flag: 'assets/game/images/flags/BM.png',
         name: 'Bermuda',
     },
     BT: {
-        flag: '🇧🇹',
+        flag: 'assets/game/images/flags/BT.png',
         name: 'Bhutan',
     },
     BO: {
-        flag: '🇧🇴',
+        flag: 'assets/game/images/flags/BO.png',
         name: 'Bolivia',
     },
     BA: {
-        flag: '🇧🇦',
+        flag: 'assets/game/images/flags/BA.png',
         name: 'Bosnia and Herzegovina',
     },
     BW: {
-        flag: '🇧🇼',
+        flag: 'assets/game/images/flags/BW.png',
         name: 'Botswana',
     },
     BV: {
-        flag: '🇧🇻',
+        flag: 'assets/game/images/flags/BV.png',
         name: 'Bouvet Island',
     },
     BR: {
-        flag: '🇧🇷',
+        flag: 'assets/game/images/flags/BR.png',
         name: 'Brazil',
     },
     IO: {
-        flag: '🇮🇴',
+        flag: 'assets/game/images/flags/IO.png',
         name: 'British Indian Ocean Territory',
     },
     VG: {
-        flag: '🇻🇬',
+        flag: 'assets/game/images/flags/VG.png',
         name: 'British Virgin Islands',
     },
     BN: {
-        flag: '🇧🇳',
+        flag: 'assets/game/images/flags/BN.png',
         name: 'Brunei',
     },
     BG: {
-        flag: '🇧🇬',
+        flag: 'assets/game/images/flags/BG.png',
         name: 'Bulgaria',
     },
     BF: {
-        flag: '🇧🇫',
+        flag: 'assets/game/images/flags/BF.png',
         name: 'Burkina Faso',
     },
     BI: {
-        flag: '🇧🇮',
+        flag: 'assets/game/images/flags/BI.png',
         name: 'Burundi',
     },
     KH: {
-        flag: '🇰🇭',
+        flag: 'assets/game/images/flags/KH.png',
         name: 'Cambodia',
     },
     CM: {
-        flag: '🇨🇲',
+        flag: 'assets/game/images/flags/CM.png',
         name: 'Cameroon',
     },
     CA: {
-        flag: '🇨🇦',
+        flag: 'assets/game/images/flags/CA.png',
         name: 'Canada',
     },
     IC: {
-        flag: '🇮🇨',
+        flag: 'assets/game/images/flags/IC.png',
         name: 'Canary Islands',
     },
     CV: {
-        flag: '🇨🇻',
+        flag: 'assets/game/images/flags/CV.png',
         name: 'Cape Verde',
     },
     BQ: {
-        flag: '🇧🇶',
+        flag: 'assets/game/images/flags/BQ.png',
         name: 'Caribbean Netherlands',
     },
     KY: {
-        flag: '🇰🇾',
+        flag: 'assets/game/images/flags/KY.png',
         name: 'Cayman Islands',
     },
     CF: {
-        flag: '🇨🇫',
+        flag: 'assets/game/images/flags/CF.png',
         name: 'Central African Republic',
     },
     EA: {
-        flag: '🇪🇦',
+        flag: 'assets/game/images/flags/EA.png',
         name: 'Ceuta and Melilla',
     },
     TD: {
-        flag: '🇹🇩',
+        flag: 'assets/game/images/flags/TD.png',
         name: 'Chad',
     },
     CL: {
-        flag: '🇨🇱',
+        flag: 'assets/game/images/flags/CL.png',
         name: 'Chile',
     },
     CN: {
-        flag: '🇨🇳',
+        flag: 'assets/game/images/flags/CN.png',
         name: 'China',
     },
     CX: {
-        flag: '🇨🇽',
+        flag: 'assets/game/images/flags/CX.png',
         name: 'Christmas Island',
     },
     CP: {
-        flag: '🇨🇵',
+        flag: 'assets/game/images/flags/CP.png',
         name: 'Clipperton Island',
     },
     CC: {
-        flag: '🇨🇨',
+        flag: 'assets/game/images/flags/CC.png',
         name: 'Cocos',
     },
     CO: {
-        flag: '🇨🇴',
+        flag: 'assets/game/images/flags/CO.png',
         name: 'Colombia',
     },
     KM: {
-        flag: '🇰🇲',
+        flag: 'assets/game/images/flags/KM.png',
         name: 'Comoros',
     },
     CG: {
-        flag: '🇨🇬',
+        flag: 'assets/game/images/flags/CG.png',
         name: 'Congo',
     },
     CD: {
-        flag: '🇨🇩',
+        flag: 'assets/game/images/flags/CD.png',
         name: 'Congo',
     },
     CK: {
-        flag: '🇨🇰',
+        flag: 'assets/game/images/flags/CK.png',
         name: 'Cook Islands',
     },
     CR: {
-        flag: '🇨🇷',
+        flag: 'assets/game/images/flags/CR.png',
         name: 'Costa Rica',
     },
     CI: {
-        flag: '🇨🇮',
+        flag: 'assets/game/images/flags/CI.png',
         name: 'Côte d’Ivoire',
     },
     HR: {
-        flag: '🇭🇷',
+        flag: 'assets/game/images/flags/HR.png',
         name: 'Croatia',
     },
     CU: {
-        flag: '🇨🇺',
+        flag: 'assets/game/images/flags/CU.png',
         name: 'Cuba',
     },
     CW: {
-        flag: '🇨🇼',
+        flag: 'assets/game/images/flags/CW.png',
         name: 'Curaçao',
     },
     CY: {
-        flag: '🇨🇾',
+        flag: 'assets/game/images/flags/CY.png',
         name: 'Cyprus',
     },
     CZ: {
-        flag: '🇨🇿',
+        flag: 'assets/game/images/flags/CZ.png',
         name: 'Czechia',
     },
     DK: {
-        flag: '🇩🇰',
+        flag: 'assets/game/images/flags/DK.png',
         name: 'Denmark',
     },
     DG: {
-        flag: '🇩🇬',
+        flag: 'assets/game/images/flags/DG.png',
         name: 'Diego Garcia',
     },
     DJ: {
-        flag: '🇩🇯',
+        flag: 'assets/game/images/flags/DJ.png',
         name: 'Djibouti',
     },
     DM: {
-        flag: '🇩🇲',
+        flag: 'assets/game/images/flags/DM.png',
         name: 'Dominica',
     },
     DO: {
-        flag: '🇩🇴',
+        flag: 'assets/game/images/flags/DO.png',
         name: 'Dominican Republic',
     },
     EC: {
-        flag: '🇪🇨',
+        flag: 'assets/game/images/flags/EC.png',
         name: 'Ecuador',
     },
     EG: {
-        flag: '🇪🇬',
+        flag: 'assets/game/images/flags/EG.png',
         name: 'Egypt',
     },
     SV: {
-        flag: '🇸🇻',
+        flag: 'assets/game/images/flags/SV.png',
         name: 'El Salvador',
     },
     GQ: {
-        flag: '🇬🇶',
+        flag: 'assets/game/images/flags/GQ.png',
         name: 'Equatorial Guinea',
     },
     ER: {
-        flag: '🇪🇷',
+        flag: 'assets/game/images/flags/ER.png',
         name: 'Eritrea',
     },
     EE: {
-        flag: '🇪🇪',
+        flag: 'assets/game/images/flags/EE.png',
         name: 'Estonia',
     },
     SZ: {
-        flag: '🇸🇿',
+        flag: 'assets/game/images/flags/SZ.png',
         name: 'Eswatini',
     },
     ET: {
-        flag: '🇪🇹',
+        flag: 'assets/game/images/flags/ET.png',
         name: 'Ethiopia',
     },
     FK: {
-        flag: '🇫🇰',
+        flag: 'assets/game/images/flags/FK.png',
         name: 'Falkland Islands',
     },
     FO: {
-        flag: '🇫🇴',
+        flag: 'assets/game/images/flags/FO.png',
         name: 'Faroe Islands',
     },
     FJ: {
-        flag: '🇫🇯',
+        flag: 'assets/game/images/flags/FJ.png',
         name: 'Fiji',
     },
     FI: {
-        flag: '🇫🇮',
+        flag: 'assets/game/images/flags/FI.png',
         name: 'Finland',
     },
     FR: {
-        flag: '🇫🇷',
+        flag: 'assets/game/images/flags/FR.png',
         name: 'France',
     },
     GF: {
-        flag: '🇬🇫',
+        flag: 'assets/game/images/flags/GF.png',
         name: 'French Guiana',
     },
     PF: {
-        flag: '🇵🇫',
+        flag: 'assets/game/images/flags/PF.png',
         name: 'French Polynesia',
     },
     TF: {
-        flag: '🇹🇫',
+        flag: 'assets/game/images/flags/TF.png',
         name: 'French Southern Territories',
     },
     GA: {
-        flag: '🇬🇦',
+        flag: 'assets/game/images/flags/GA.png',
         name: 'Gabon',
     },
     GM: {
-        flag: '🇬🇲',
+        flag: 'assets/game/images/flags/GM.png',
         name: 'Gambia',
     },
     GE: {
-        flag: '🇬🇪',
+        flag: 'assets/game/images/flags/GE.png',
         name: 'Georgia',
     },
     DE: {
-        flag: '🇩🇪',
+        flag: 'assets/game/images/flags/DE.png',
         name: 'Germany',
     },
     GH: {
-        flag: '🇬🇭',
+        flag: 'assets/game/images/flags/GH.png',
         name: 'Ghana',
     },
     GI: {
-        flag: '🇬🇮',
+        flag: 'assets/game/images/flags/GI.png',
         name: 'Gibraltar',
     },
     GR: {
-        flag: '🇬🇷',
+        flag: 'assets/game/images/flags/GR.png',
         name: 'Greece',
     },
     GL: {
-        flag: '🇬🇱',
+        flag: 'assets/game/images/flags/GL.png',
         name: 'Greenland',
     },
     GD: {
-        flag: '🇬🇩',
+        flag: 'assets/game/images/flags/GD.png',
         name: 'Grenada',
     },
     GP: {
-        flag: '🇬🇵',
+        flag: 'assets/game/images/flags/GP.png',
         name: 'Guadeloupe',
     },
     GU: {
-        flag: '🇬🇺',
+        flag: 'assets/game/images/flags/GU.png',
         name: 'Guam',
     },
     GT: {
-        flag: '🇬🇹',
+        flag: 'assets/game/images/flags/GT.png',
         name: 'Guatemala',
     },
     GG: {
-        flag: '🇬🇬',
+        flag: 'assets/game/images/flags/GG.png',
         name: 'Guernsey',
     },
     GN: {
-        flag: '🇬🇳',
+        flag: 'assets/game/images/flags/GN.png',
         name: 'Guinea',
     },
     GW: {
-        flag: '🇬🇼',
+        flag: 'assets/game/images/flags/GW.png',
         name: 'Guinea-Bissau',
     },
     GY: {
-        flag: '🇬🇾',
+        flag: 'assets/game/images/flags/GY.png',
         name: 'Guyana',
     },
     HT: {
-        flag: '🇭🇹',
+        flag: 'assets/game/images/flags/HT.png',
         name: 'aiti',
     },
     HM: {
-        flag: '🇭🇲',
+        flag: 'assets/game/images/flags/HM.png',
         name: 'Heard and McDonald Islands',
     },
     HN: {
-        flag: '🇭🇳',
+        flag: 'assets/game/images/flags/HN.png',
         name: 'Honduras',
     },
     HK: {
-        flag: '🇭🇰',
+        flag: 'assets/game/images/flags/HK.png',
         name: 'Hong Kong',
     },
     HU: {
-        flag: '🇭🇺',
+        flag: 'assets/game/images/flags/HU.png',
         name: 'Hungary',
     },
     IS: {
-        flag: '🇮🇸',
+        flag: 'assets/game/images/flags/IS.png',
         name: 'Iceland',
     },
     IN: {
-        flag: '🇮🇳',
+        flag: 'assets/game/images/flags/IN.png',
         name: 'India',
     },
     ID: {
-        flag: '🇮🇩',
+        flag: 'assets/game/images/flags/ID.png',
         name: 'Indonesia',
     },
     IR: {
-        flag: '🇮🇷',
+        flag: 'assets/game/images/flags/IR.png',
         name: 'Iran',
     },
     IQ: {
-        flag: '🇮🇶',
+        flag: 'assets/game/images/flags/IQ.png',
         name: 'Iraq',
     },
     IE: {
-        flag: '🇮🇪',
+        flag: 'assets/game/images/flags/IE.png',
         name: 'Ireland',
     },
     IM: {
-        flag: '🇮🇲',
+        flag: 'assets/game/images/flags/IM.png',
         name: 'Isle of Man',
     },
     IL: {
-        flag: '🇮🇱',
+        flag: 'assets/game/images/flags/IL.png',
         name: 'Israel',
     },
     IT: {
-        flag: '🇮🇹',
+        flag: 'assets/game/images/flags/IT.png',
         name: 'Italy',
     },
     JM: {
-        flag: '🇯🇲',
+        flag: 'assets/game/images/flags/JM.png',
         name: 'Jamaica',
     },
     JP: {
-        flag: '🇯🇵',
+        flag: 'assets/game/images/flags/JP.png',
         name: 'Japan',
     },
     JE: {
-        flag: '🇯🇪',
+        flag: 'assets/game/images/flags/JE.png',
         name: 'Jersey',
     },
     JO: {
-        flag: '🇯🇴',
+        flag: 'assets/game/images/flags/JO.png',
         name: 'Jordan',
     },
     KZ: {
-        flag: '🇰🇿',
+        flag: 'assets/game/images/flags/KZ.png',
         name: 'Kazakhstan',
     },
     KE: {
-        flag: '🇰🇪',
+        flag: 'assets/game/images/flags/KE.png',
         name: 'Kenya',
     },
     KI: {
-        flag: '🇰🇮',
+        flag: 'assets/game/images/flags/KI.png',
         name: 'Kiribati',
     },
     XK: {
-        flag: '🇽🇰',
+        flag: 'assets/game/images/flags/XK.png',
         name: 'Kosovo',
     },
     KW: {
-        flag: '🇰🇼',
+        flag: 'assets/game/images/flags/KW.png',
         name: 'Kuwait',
     },
     KG: {
-        flag: '🇰🇬',
+        flag: 'assets/game/images/flags/KG.png',
         name: 'Kyrgyzstan',
     },
     LA: {
-        flag: '🇱🇦',
+        flag: 'assets/game/images/flags/LA.png',
         name: 'Laos',
     },
     LV: {
-        flag: '🇱🇻',
+        flag: 'assets/game/images/flags/LV.png',
         name: 'Latvia',
     },
     LB: {
-        flag: '🇱🇧',
+        flag: 'assets/game/images/flags/LB.png',
         name: 'Lebanon',
     },
     LS: {
-        flag: '🇱🇸',
+        flag: 'assets/game/images/flags/LS.png',
         name: 'Lesotho',
     },
     LR: {
-        flag: '🇱🇷',
+        flag: 'assets/game/images/flags/LR.png',
         name: 'Liberia',
     },
     LY: {
-        flag: '🇱🇾',
+        flag: 'assets/game/images/flags/LY.png',
         name: 'Libya',
     },
     LI: {
-        flag: '🇱🇮',
+        flag: 'assets/game/images/flags/LI.png',
         name: 'Liechtenstein',
     },
     LT: {
-        flag: '🇱🇹',
+        flag: 'assets/game/images/flags/LT.png',
         name: 'Lithuania',
     },
     LU: {
-        flag: '🇱🇺',
+        flag: 'assets/game/images/flags/LU.png',
         name: 'Luxembourg',
     },
     MO: {
-        flag: '🇲🇴',
+        flag: 'assets/game/images/flags/MO.png',
         name: 'Macao',
     },
     MG: {
-        flag: '🇲🇬',
+        flag: 'assets/game/images/flags/MG.png',
         name: 'Madagascar',
     },
     MW: {
-        flag: '🇲🇼',
+        flag: 'assets/game/images/flags/MW.png',
         name: 'Malawi',
     },
     MY: {
-        flag: '🇲🇾',
+        flag: 'assets/game/images/flags/MY.png',
         name: 'Malaysia',
     },
     MV: {
-        flag: '🇲🇻',
+        flag: 'assets/game/images/flags/MV.png',
         name: 'Maldives',
     },
     ML: {
-        flag: '🇲🇱',
+        flag: 'assets/game/images/flags/ML.png',
         name: 'Mali',
     },
     MT: {
-        flag: '🇲🇹',
+        flag: 'assets/game/images/flags/MT.png',
         name: 'Malta',
     },
     MH: {
-        flag: '🇲🇭',
+        flag: 'assets/game/images/flags/MH.png',
         name: 'Marshall Islands',
     },
     MQ: {
-        flag: '🇲🇶',
+        flag: 'assets/game/images/flags/MQ.png',
         name: 'Martinique',
     },
     MR: {
-        flag: '🇲🇷',
+        flag: 'assets/game/images/flags/MR.png',
         name: 'Mauritania',
     },
     MU: {
-        flag: '🇲🇺',
+        flag: 'assets/game/images/flags/MU.png',
         name: 'Mauritius',
     },
     YT: {
-        flag: '🇾🇹',
+        flag: 'assets/game/images/flags/YT.png',
         name: 'Mayotte',
     },
     MX: {
-        flag: '🇲🇽',
+        flag: 'assets/game/images/flags/MX.png',
         name: 'Mexico',
     },
     FM: {
-        flag: '🇫🇲',
+        flag: 'assets/game/images/flags/FM.png',
         name: 'Micronesia',
     },
     MD: {
-        flag: '🇲🇩',
+        flag: 'assets/game/images/flags/MD.png',
         name: 'Moldova',
     },
     MC: {
-        flag: '🇲🇨',
+        flag: 'assets/game/images/flags/MC.png',
         name: 'Monaco',
     },
     MN: {
-        flag: '🇲🇳',
+        flag: 'assets/game/images/flags/MN.png',
         name: 'Mongolia',
     },
     ME: {
-        flag: '🇲🇪',
+        flag: 'assets/game/images/flags/ME.png',
         name: 'Montenegro',
     },
     MS: {
-        flag: '🇲🇸',
+        flag: 'assets/game/images/flags/MS.png',
         name: 'Montserrat',
     },
     MA: {
-        flag: '🇲🇦',
+        flag: 'assets/game/images/flags/MA.png',
         name: 'Morocco',
     },
     MZ: {
-        flag: '🇲🇿',
+        flag: 'assets/game/images/flags/MZ.png',
         name: 'Mozambique',
     },
     MM: {
-        flag: '🇲🇲',
+        flag: 'assets/game/images/flags/MM.png',
         name: 'Myanmar',
     },
     NA: {
-        flag: '🇳🇦',
+        flag: 'assets/game/images/flags/NA.png',
         name: 'Namibia',
     },
     NR: {
-        flag: '🇳🇷',
+        flag: 'assets/game/images/flags/NR.png',
         name: 'Nauru',
     },
     NP: {
-        flag: '🇳🇵',
+        flag: 'assets/game/images/flags/NP.png',
         name: 'Nepal',
     },
     NL: {
-        flag: '🇳🇱',
+        flag: 'assets/game/images/flags/NL.png',
         name: 'Netherlands',
     },
     NC: {
-        flag: '🇳🇨',
+        flag: 'assets/game/images/flags/NC.png',
         name: 'New Caledonia',
     },
     NZ: {
-        flag: '🇳🇿',
+        flag: 'assets/game/images/flags/NZ.png',
         name: 'New Zealand',
     },
     NI: {
-        flag: '🇳🇮',
+        flag: 'assets/game/images/flags/NI.png',
         name: 'Nicaragua',
     },
     NE: {
-        flag: '🇳🇪',
+        flag: 'assets/game/images/flags/NE.png',
         name: 'Niger',
     },
     NG: {
-        flag: '🇳🇬',
+        flag: 'assets/game/images/flags/NG.png',
         name: 'Nigeria',
     },
     NU: {
-        flag: '🇳🇺',
+        flag: 'assets/game/images/flags/NU.png',
         name: 'Niue',
     },
     NF: {
-        flag: '🇳🇫',
+        flag: 'assets/game/images/flags/NF.png',
         name: 'Norfolk Island',
     },
     KP: {
-        flag: '🇰🇵',
+        flag: 'assets/game/images/flags/KP.png',
         name: 'North Korea',
     },
     MK: {
-        flag: '🇲🇰',
+        flag: 'assets/game/images/flags/MK.png',
         name: 'North Macedonia',
     },
     MP: {
-        flag: '🇲🇵',
+        flag: 'assets/game/images/flags/MP.png',
         name: 'Northern Mariana Islands',
     },
     NO: {
-        flag: '🇳🇴',
+        flag: 'assets/game/images/flags/NO.png',
         name: 'Norway',
     },
     OM: {
-        flag: '🇴🇲',
+        flag: 'assets/game/images/flags/OM.png',
         name: 'Oman',
     },
     PK: {
-        flag: '🇵🇰',
+        flag: 'assets/game/images/flags/PK.png',
         name: 'Pakistan',
     },
     PW: {
-        flag: '🇵🇼',
+        flag: 'assets/game/images/flags/PW.png',
         name: 'Palau',
     },
     PA: {
-        flag: '🇵🇦',
+        flag: 'assets/game/images/flags/PA.png',
         name: 'Panama',
     },
     PG: {
-        flag: '🇵🇬',
+        flag: 'assets/game/images/flags/PG.png',
         name: 'Papua New Guinea',
     },
     PY: {
-        flag: '🇵🇾',
+        flag: 'assets/game/images/flags/PY.png',
         name: 'Paraguay',
     },
     PE: {
-        flag: '🇵🇪',
+        flag: 'assets/game/images/flags/PE.png',
         name: 'Peru',
     },
     PH: {
-        flag: '🇵🇭',
+        flag: 'assets/game/images/flags/PH.png',
         name: 'Philippines',
     },
     PN: {
-        flag: '🇵🇳',
+        flag: 'assets/game/images/flags/PN.png',
         name: 'Pitcairn Islands',
     },
     PL: {
-        flag: '🇵🇱',
+        flag: 'assets/game/images/flags/PL.png',
         name: 'Poland',
     },
     PT: {
-        flag: '🇵🇹',
+        flag: 'assets/game/images/flags/PT.png',
         name: 'Portugal',
     },
     PR: {
-        flag: '🇵🇷',
+        flag: 'assets/game/images/flags/PR.png',
         name: 'Puerto Rico',
     },
     QA: {
-        flag: '🇶🇦',
+        flag: 'assets/game/images/flags/QA.png',
         name: 'Qatar',
     },
     RE: {
-        flag: '🇷🇪',
+        flag: 'assets/game/images/flags/RE.png',
         name: 'Réunion',
     },
     RO: {
-        flag: '🇷🇴',
+        flag: 'assets/game/images/flags/RO.png',
         name: 'Romania',
     },
     RU: {
-        flag: '🇷🇺',
+        flag: 'assets/game/images/flags/RU.png',
         name: 'Russia',
     },
     RW: {
-        flag: '🇷🇼',
+        flag: 'assets/game/images/flags/RW.png',
         name: 'Rwanda',
     },
     WS: {
-        flag: '🇼🇸',
+        flag: 'assets/game/images/flags/WS.png',
         name: 'Samoa',
     },
     SM: {
-        flag: '🇸🇲',
+        flag: 'assets/game/images/flags/SM.png',
         name: 'San Marino',
     },
     ST: {
-        flag: '🇸🇹',
+        flag: 'assets/game/images/flags/ST.png',
         name: 'São Tomé & Príncipe',
     },
     SA: {
-        flag: '🇸🇦',
+        flag: 'assets/game/images/flags/SA.png',
         name: 'Saudi Arabia',
     },
     SN: {
-        flag: '🇸🇳',
+        flag: 'assets/game/images/flags/SN.png',
         name: 'Senegal',
     },
     RS: {
-        flag: '🇷🇸',
+        flag: 'assets/game/images/flags/RS.png',
         name: 'Serbia',
     },
     SC: {
-        flag: '🇸🇨',
+        flag: 'assets/game/images/flags/SC.png',
         name: 'Seychelles',
     },
     SL: {
-        flag: '🇸🇱',
+        flag: 'assets/game/images/flags/SL.png',
         name: 'Sierra Leone',
     },
     SG: {
-        flag: '🇸🇬',
+        flag: 'assets/game/images/flags/SG.png',
         name: 'Singapore',
     },
     SX: {
-        flag: '🇸🇽',
+        flag: 'assets/game/images/flags/SX.png',
         name: 'Sint Maarten',
     },
     SK: {
-        flag: '🇸🇰',
+        flag: 'assets/game/images/flags/SK.png',
         name: 'Slovakia',
     },
     SI: {
-        flag: '🇸🇮',
+        flag: 'assets/game/images/flags/SI.png',
         name: 'Slovenia',
     },
     SB: {
-        flag: '🇸🇧',
+        flag: 'assets/game/images/flags/SB.png',
         name: 'Solomon Islands',
     },
     SO: {
-        flag: '🇸🇴',
+        flag: 'assets/game/images/flags/SO.png',
         name: 'Somalia',
     },
     ZA: {
-        flag: '🇿🇦',
+        flag: 'assets/game/images/flags/ZA.png',
         name: 'South Africa',
     },
     GS: {
-        flag: '🇬🇸',
+        flag: 'assets/game/images/flags/GS.png',
         name: 'South Georgia and the South Sandwich Islands',
     },
     KR: {
-        flag: '🇰🇷',
+        flag: 'assets/game/images/flags/KR.png',
         name: 'South Korea',
     },
     SS: {
-        flag: '🇸🇸',
+        flag: 'assets/game/images/flags/SS.png',
         name: 'South Sudan',
     },
     ES: {
-        flag: '🇪🇸',
+        flag: 'assets/game/images/flags/ES.png',
         name: 'Spain',
     },
     LK: {
-        flag: '🇱🇰',
+        flag: 'assets/game/images/flags/LK.png',
         name: 'Sri Lanka',
     },
     PS: {
-        flag: '🇵🇸',
+        flag: 'assets/game/images/flags/PS.png',
         name: 'State of Palestine',
     },
     BL: {
-        flag: '🇧🇱',
+        flag: 'assets/game/images/flags/BL.png',
         name: 'St. Barthélemy',
     },
     SH: {
-        flag: '🇸🇭',
+        flag: 'assets/game/images/flags/SH.png',
         name: 'St. Helena',
     },
     KN: {
-        flag: '🇰🇳',
+        flag: 'assets/game/images/flags/KN.png',
         name: 'St. Kitts and Nevis',
     },
     LC: {
-        flag: '🇱🇨',
+        flag: 'assets/game/images/flags/LC.png',
         name: 'St. Lucia',
     },
     MF: {
-        flag: '🇲🇫',
+        flag: 'assets/game/images/flags/MF.png',
         name: 'St. Martin',
     },
     PM: {
-        flag: '🇵🇲',
+        flag: 'assets/game/images/flags/PM.png',
         name: 'St. Pierre and Miquelon',
     },
     VC: {
-        flag: '🇻🇨',
+        flag: 'assets/game/images/flags/VC.png',
         name: 'St. Vincent and the Grenadines',
     },
     SD: {
-        flag: '🇸🇩',
+        flag: 'assets/game/images/flags/SD.png',
         name: 'Sudan',
     },
     SR: {
-        flag: '🇸🇷',
+        flag: 'assets/game/images/flags/SR.png',
         name: 'Suriname',
     },
     SJ: {
-        flag: '🇸🇯',
+        flag: 'assets/game/images/flags/SJ.png',
         name: 'Svalbard',
     },
     SE: {
-        flag: '🇸🇪',
+        flag: 'assets/game/images/flags/SE.png',
         name: 'Sweden',
     },
     CH: {
-        flag: '🇨🇭',
+        flag: 'assets/game/images/flags/CH.png',
         name: 'Switzerland',
     },
     SY: {
-        flag: '🇸🇾',
+        flag: 'assets/game/images/flags/SY.png',
         name: 'Syria',
     },
     TW: {
-        flag: '🇹🇼',
+        flag: 'assets/game/images/flags/TW.png',
         name: 'Taiwan',
     },
     TJ: {
-        flag: '🇹🇯',
+        flag: 'assets/game/images/flags/TJ.png',
         name: 'Tajikistan',
     },
     TZ: {
-        flag: '🇹🇿',
+        flag: 'assets/game/images/flags/TZ.png',
         name: 'Tanzania',
     },
     TH: {
-        flag: '🇹🇭',
+        flag: 'assets/game/images/flags/TH.png',
         name: 'Thailand',
     },
     TL: {
-        flag: '🇹🇱',
+        flag: 'assets/game/images/flags/TL.png',
         name: 'Timor-Leste',
     },
     TG: {
-        flag: '🇹🇬',
+        flag: 'assets/game/images/flags/TG.png',
         name: 'Togo',
     },
     TK: {
-        flag: '🇹🇰',
+        flag: 'assets/game/images/flags/TK.png',
         name: 'Tokelau',
     },
     TO: {
-        flag: '🇹🇴',
+        flag: 'assets/game/images/flags/TO.png',
         name: 'Tonga',
     },
     TT: {
-        flag: '🇹🇹',
+        flag: 'assets/game/images/flags/TT.png',
         name: 'Trinidad and Tobago',
     },
     TA: {
-        flag: '🇹🇦',
+        flag: 'assets/game/images/flags/TA.png',
         name: 'Tristan Da Cunha',
     },
     TN: {
-        flag: '🇹🇳',
+        flag: 'assets/game/images/flags/TN.png',
         name: 'Tunisia',
     },
     TR: {
-        flag: '🇹🇷',
+        flag: 'assets/game/images/flags/TR.png',
         name: 'Turkey',
     },
     TM: {
-        flag: '🇹🇲',
+        flag: 'assets/game/images/flags/TM.png',
         name: 'Turkmenistan',
     },
     TC: {
-        flag: '🇹🇨',
+        flag: 'assets/game/images/flags/TC.png',
         name: 'Turks and Caicos Islands',
     },
     TV: {
-        flag: '🇹🇻',
+        flag: 'assets/game/images/flags/TV.png',
         name: 'Tuvalu',
     },
     UM: {
-        flag: '🇺🇲',
+        flag: 'assets/game/images/flags/UM.png',
         name: 'Outlying Islands',
     },
     VI: {
-        flag: '🇻🇮',
+        flag: 'assets/game/images/flags/VI.png',
         name: 'Virgin Islands',
     },
     UG: {
-        flag: '🇺🇬',
+        flag: 'assets/game/images/flags/UG.png',
         name: 'Uganda',
     },
     UA: {
-        flag: '🇺🇦',
+        flag: 'assets/game/images/flags/UA.png',
         name: 'Ukraine',
     },
     AE: {
-        flag: '🇦🇪',
+        flag: 'assets/game/images/flags/AE.png',
         name: 'United Arab Emirates',
     },
     GB: {
-        flag: '🇬🇧',
+        flag: 'assets/game/images/flags/GB.png',
         name: 'United Kingdom',
     },
     US: {
-        flag: '🇺🇸',
+        flag: 'assets/game/images/flags/US.png',
         name: 'United States',
     },
     UY: {
-        flag: '🇺🇾',
+        flag: 'assets/game/images/flags/UY.png',
         name: 'Uruguay',
     },
     UZ: {
-        flag: '🇺🇿',
+        flag: 'assets/game/images/flags/UZ.png',
         name: 'Uzbekistan',
     },
     VU: {
-        flag: '🇻🇺',
+        flag: 'assets/game/images/flags/VU.png',
         name: 'Vanuatu',
     },
     VA: {
-        flag: '🇻🇦',
+        flag: 'assets/game/images/flags/VA.png',
         name: 'Vatican City',
     },
     VE: {
-        flag: '🇻🇪',
+        flag: 'assets/game/images/flags/VE.png',
         name: 'Venezuela',
     },
     VN: {
-        flag: '🇻🇳',
+        flag: 'assets/game/images/flags/VN.png',
         name: 'Vietnam',
     },
     WF: {
-        flag: '🇼🇫',
+        flag: 'assets/game/images/flags/WF.png',
         name: 'Wallis and Futuna',
     },
     EH: {
-        flag: '🇪🇭',
+        flag: 'assets/game/images/flags/EH.png',
         name: 'Western Sahara',
     },
     YE: {
-        flag: '🇾🇪',
+        flag: 'assets/game/images/flags/YE.png',
         name: 'Yemen',
     },
     ZM: {
-        flag: '🇿🇲',
+        flag: 'assets/game/images/flags/ZM.png',
         name: 'Zambia',
     },
     ZW: {
-        flag: '🇿🇼',
+        flag: 'assets/game/images/flags/ZW.png',
         name: 'Zimbabwe',
-    },
-    DEFAULT: {
-        flag: '🏴‍☠️',
-        name: 'Atlantis',
     },
 };

@@ -20,24 +20,45 @@ class PlayerCountrySelect {
         this.isOpened = false;
     }
 
-    updatePlayerCountry(countryCode, textContent) {
+    updatePlayerCountry(countryCode) {
+        const countryInfo = countriesInfo[countryCode];
+
         this.playerCountry.setAttribute('data-value', countryCode);
-        this.playerCountry.textContent = textContent;
+        this.playerCountry.innerHTML = '';
+
+        const flagImage = document.createElement('img');
+        flagImage.src = countryInfo.flag;
+        flagImage.classList.add('country-flag');
+
+        const countryNameTextNode = document.createTextNode(countryInfo.name);
+
+        this.playerCountry.appendChild(flagImage);
+        this.playerCountry.appendChild(countryNameTextNode);
     }
 
     initializeOptions() {
         const countryEntries = Object.entries(countriesInfo);
 
-        const [firstCountryCode, firstCountryObject] = countryEntries[0];
+        // const [firstCountryCode, firstCountryObject] = countryEntries[0];
 
-        this.updatePlayerCountry(firstCountryCode, `${firstCountryObject.flag} ${firstCountryObject.name}`);
+        const defaultCountyCode = 'DEFAULT';
+
+        this.updatePlayerCountry(defaultCountyCode);
 
         // Create options
-        countryEntries.forEach(([countryCode, countryObject]) => {
+        countryEntries.forEach(([countryCode, countryInfo]) => {
             const option = document.createElement('li');
             option.classList.add('option');
             option.setAttribute('data-value', countryCode);
-            option.textContent = `${countryObject.flag} ${countryObject.name}`;
+
+            const flagImage = document.createElement('img');
+            flagImage.src = countryInfo.flag;
+            flagImage.classList.add('country-flag');
+
+            const countryNameTextNode = document.createTextNode(countryInfo.name);
+
+            option.appendChild(flagImage);
+            option.appendChild(countryNameTextNode);
 
             this.optionsContainer.appendChild(option);
         });
@@ -55,8 +76,7 @@ class PlayerCountrySelect {
 
                     if (isOptionClicked) {
                         const countryCode = documentClickEvent.target.getAttribute('data-value');
-                        const { textContent } = documentClickEvent.target;
-                        this.updatePlayerCountry(countryCode, textContent);
+                        this.updatePlayerCountry(countryCode);
                     }
 
                     this.close();
