@@ -1,5 +1,7 @@
 #index-main {
 
+    margin-bottom: calc(-20px - 1vw);
+
     #section-one {
         background: rgb(var(--primary-300));
         background: linear-gradient(180deg, rgb(var(--primary-400)) 0%, rgb(var(--primary-100)) 100%);
@@ -44,7 +46,6 @@
             #game-interface-layer {
                 height: 100%;
                 width: 100%;
-                background-color: rgba(0, 0, 0, 0.65);
 
                 @media screen and (min-width: 1200px) {
                     position: absolute;

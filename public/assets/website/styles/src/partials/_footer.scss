@@ -5,7 +5,7 @@ footer {
     justify-content: center;
 
     @media screen and (min-width: 560px) {
-        padding: 0px 0px calc(20px + 1vw) 0px;
+        padding: calc(20px + 1vw) 0px;
     }
 
     #socialMedias-container {

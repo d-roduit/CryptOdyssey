@@ -158,8 +158,10 @@
     
                         label {
                             display: block;
-        
+                            
                             margin-bottom: 8px;
+                            
+                            user-select: none;
                         }
         
                         .error-message {
@@ -192,13 +194,18 @@
                                 }
                             
                                 #player-country {
+                                    display: flex;
+                                    align-items: center;
+
                                     overflow: hidden;
                                     text-overflow: ellipsis; 
                                     white-space: nowrap;
                                 }
 
-                                i {
-                                    margin-left: 10px;
+                                .country-flag {
+                                    margin-right: 10px;
+                                    max-width: 20px;
+                                    max-height: 15px;
                                 }
                                 
                                 #options-container {
@@ -228,6 +235,9 @@
                                     }
                                     
                                     .option {
+                                        display: flex;
+                                        align-items: center;
+
                                         line-height: var(--option-line-height);
                                         padding: 0px 5px;
                                         
