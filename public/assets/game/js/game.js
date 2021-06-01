@@ -2,6 +2,7 @@ import * as PresentationScreen from './PresentationScreen.js';
 import * as PlayerInfoScreen from './PlayerInfoScreen.js';
 import * as LocationManager from './LocationManager.js';
 import Player from './Player.js';
+import * as GameAnimation from './gameAnimation.js';
 
 // const player = new Player();
 
@@ -29,6 +30,12 @@ PlayerInfoScreen.autodetectCountryButton.addEventListener('click', () => {
         console.log(`Error: ${err}`);
         playerCountryLabel.textContent = tempPlayerCountryLabelContent;
     });
+});
+
+PlayerInfoScreen.playGameButton.addEventListener('click', () => {
+    PlayerInfoScreen.hide();
+    GameAnimation.backgroundMusic.play();
+    GameAnimation.startAnimating(18);
 });
 
 // const validatePlayerNameInput = () => {
