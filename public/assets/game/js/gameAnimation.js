@@ -74,3 +74,4 @@ export const startAnimating = (fps) => {
 
 // music
 export const backgroundMusic = new Audio('assets/game/sounds/TownTheme.mp3');
+backgroundMusic.loop = true;

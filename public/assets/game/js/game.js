@@ -1,10 +1,11 @@
 import * as PresentationScreen from './PresentationScreen.js';
 import * as PlayerInfoScreen from './PlayerInfoScreen.js';
 import * as LocationManager from './LocationManager.js';
-import Player from './Player.js';
 import * as GameAnimation from './gameAnimation.js';
+import PlayerDB from './PlayerDB.js';
+import Player from './Player.js';
 
-// const player = new Player();
+let player = null;
 
 // Show the first screen (presentation screen)
 PresentationScreen.show();
@@ -33,9 +34,70 @@ PlayerInfoScreen.autodetectCountryButton.addEventListener('click', () => {
 });
 
 PlayerInfoScreen.playGameButton.addEventListener('click', () => {
-    PlayerInfoScreen.hide();
-    GameAnimation.backgroundMusic.play();
-    GameAnimation.startAnimating(18);
+    const playername = PlayerInfoScreen.playerNameInput.value;
+    const playerCountryCode = PlayerInfoScreen.playerCountry.getAttribute('data-value');
+
+    const errorMessages = {
+        playername: [],
+        playerCountryCode: [],
+    };
+
+    // Check if playername resepects the 3-20 length
+    if (playername.length < 3 || playername.length > 20) {
+        errorMessages.playername.push('Player name must be between 3 and 20 characters.');
+    }
+
+    // Check that playername does not contain any space
+    if (playername.includes(' ')) {
+        errorMessages.playername.push('Player name cannot contain spaces.');
+    }
+
+    // Check if playerCountryCode is a countryCode that we have in our list
+    // if (countriesInfo[playerCountryCode] != UNDEFIED OR NULL)
+
+    if (errorMessages.playername.length > 0) {
+        // Afficher toujours le premier message d'erreur ici
+        return;
+    }
+
+    PlayerDB.get(playername)
+        .then((playerFromDB) => { // playerFromDB can be either null or an instance of Player class.
+            // If player does not exist in DB
+            if (playerFromDB === null) {
+                // Create the player
+                console.log(`Player ${playername} does not exist. Creating the player...`);
+                player = new Player(playername);
+                player.countryCode = playerCountryCode;
+                console.log(`Saving player ${player.toJSON()} to DB...`);
+                PlayerDB.save(player);
+            } else {
+                console.log(`Player ${playername} found in DB.`);
+                player = playerFromDB;
+                player.countryCode = playerCountryCode;
+                console.log(`Updating player ${player.toJSON()} in DB...`);
+                PlayerDB.update(player);
+            }
+
+            console.log(player.toJSON());
+
+            PlayerInfoScreen.hide();
+            GameAnimation.backgroundMusic.play();
+            GameAnimation.startAnimating(18);
+        })
+        .catch((err) => console.log(err));
+
+    // if (player != null) {
+    //     PlayerInfoScreen.hide();
+    // } else {
+    //     player = new Player(playername);
+    //     player.countryCode = playerCountryCode;
+
+    //     PlayerDB.save(player)
+    //         .then(() => {
+    //             PlayerInfoScreen.hide();
+    //         })
+    //         .catch((err) => console.log(`Error: ${err.message}`));
+    // }
 });
 
 // const validatePlayerNameInput = () => {

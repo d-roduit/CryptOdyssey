@@ -28,3 +28,7 @@ node_modules/
 # Temporary folders
 tmp/
 temp/
+
+
+Database files
+*.db

@@ -1,6 +1,6 @@
 class Player {
-    constructor() {
-        this.playername = '';
+    constructor(playername) {
+        this.playername = playername;
         this.wallet = {
             coins: 0,
             crypto: {
@@ -11,8 +11,34 @@ class Player {
                 cardano: 0,
             },
         };
-        this.countryCode = '';
+        this.countryCode = 'DEFAULT';
         this.lastTurnedWheel = 0;
+    }
+
+    toObject() {
+        return {
+            playername: this.playername,
+            wallet: this.wallet,
+            countryCode: this.countryCode,
+            lastTurnedWheel: this.lastTurnedWheel,
+        };
+    }
+
+    toJSON() {
+        return JSON.stringify(this.toObject());
+    }
+
+    static fromObject(playerObject) {
+        let player = null;
+
+        if (playerObject !== null) {
+            player = new Player(playerObject.playername);
+            player.wallet = playerObject.wallet;
+            player.countryCode = playerObject.countryCode;
+            player.lastTurnedWheel = playerObject.lastTurnedWheel;
+        }
+
+        return player;
     }
 }
 

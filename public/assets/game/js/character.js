@@ -27,7 +27,6 @@ export const drawSprite = (context, img, sX, sY, sW, sH, dX, dY, dW, dH) => {
 const keys = [];
 // callback function. Function that will run whatever code we put in it. e = event object.
 window.addEventListener('keydown', (e) => {
-    e.preventDefault();
     keys[e.key] = true; // when a key is pressed, we add it to our array
     character.moving = true;
 });
@@ -56,25 +55,24 @@ const arrayAlreadyHasArray = (arr, subarr) => {
     return false;
 };
 
-
 // -------------Move player-----------------
 export const movePlayer = (canvas) => {
-    if (keys.ArrowUp && character.y > 0 && !arrayAlreadyHasArray(Map.collisionBlocksUp, [character.x, character.y])) {
+    if (keys.w && character.y > 0 && !arrayAlreadyHasArray(Map.collisionBlocksUp, [character.x, character.y])) {
         character.y -= character.speed;
         character.frameY = 8;
         character.moving = true;
     }
-    if (keys.ArrowLeft && character.x > 0 && !arrayAlreadyHasArray(Map.collisionBlocksLeft, [character.x, character.y])) {
+    if (keys.a && character.x > 0 && !arrayAlreadyHasArray(Map.collisionBlocksLeft, [character.x, character.y])) {
         character.x -= character.speed;
         character.frameY = 9;
         character.moving = true;
     }
-    if (keys.ArrowDown && character.y < canvas.height - character.height && !arrayAlreadyHasArray(Map.collisionBlocksDown, [character.x, character.y])) {
+    if (keys.s && character.y < canvas.height - character.height && !arrayAlreadyHasArray(Map.collisionBlocksDown, [character.x, character.y])) {
         character.y += character.speed;
         character.frameY = 10;
         character.moving = true;
     }
-    if (keys.ArrowRight && character.x < canvas.width - character.width && !arrayAlreadyHasArray(Map.collisionBlocksRight, [character.x, character.y])) {
+    if (keys.d && character.x < canvas.width - character.width && !arrayAlreadyHasArray(Map.collisionBlocksRight, [character.x, character.y])) {
         character.x += character.speed;
         character.frameY = 11;
         character.moving = true;
