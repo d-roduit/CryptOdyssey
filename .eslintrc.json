@@ -16,6 +16,12 @@
         "indent": ["error", 4],
         "quote-props": ["error", "consistent"],
         "import/extensions": ["error", "ignorePackages"],
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "prefer-destructuring": ["error", {
+            "array": false,
+            "object": false
+          }, {
+            "enforceForRenamedProperties": false
+          }]
     }
 }

@@ -15,14 +15,8 @@
             --brightness-amount: 40%;
 
             display: none;
-
-            height: 100%;
-            width: 100%;
             
-            background-image: url('../../images/presentation-screen-background.jpg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background-image: url('../../images/game-background.png');
             
             filter: blur(var(--blur-amount)) brightness(var(--brightness-amount));
             -webkit-filter: blur(var(--blur-amount)) brightness(var(--brightness-amount));
@@ -30,6 +24,15 @@
             @media screen and (min-width: 1200px) {
                 display: block;
             }
+        }
+
+        .background-image {
+            height: 100%;
+            width: 100%;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         
         #presentation-screen {
@@ -266,6 +269,158 @@
                     margin-top: 40px;
                     margin-left: auto;
                     margin-right: auto;
+                }
+            }
+        }
+
+        #introduction-tutorial-screen {
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            height: 100%;
+            width: 100%;
+
+            .content {
+                width: 80%;
+
+                text-align: center;
+                
+                h3 {
+                    font-size: 22px;
+
+                    span {
+                        font-size: 22px;
+                    }
+                }
+
+                p {
+                    font-size: 20px;
+
+                    &:first-of-type {
+                        margin-top: 20px;
+                    }
+                }
+
+                button {
+                    margin-top: 30px;
+                }
+            }
+        }
+
+        #market-tutorial-screen {
+            display: none;
+            align-items: center;
+
+            height: 100%;
+            width: 100%;
+
+            .content {    
+                width: 500px;
+                
+                margin-left: 415px;
+                
+                h3 {
+                    font-size: 22px;
+
+                    span {
+                        font-size: 22px;
+                    }
+                }
+
+                p {
+                    font-size: 20px;
+
+                    &:first-of-type {
+                        margin-top: 20px;
+                    }
+
+                    kbd {
+                        padding: 4px;
+                        font-size: .75em;
+                    }
+                }
+
+                button {
+                    margin-top: 30px;
+                }
+            }
+
+            .market-tutorial-background {
+                background-image: url('../../images/tutorial/market-tutorial-background.png');
+            }
+        }
+
+        #mine-tutorial-screen {
+            display: none;
+            align-items: center;
+
+            height: 100%;
+            width: 100%;
+
+            .content {
+                width: 550px;
+
+                margin-left: 50px;
+                
+                h3 {
+                    font-size: 22px;
+
+                    span {
+                        font-size: 22px;
+                    }
+                }
+
+                p {
+                    font-size: 20px;
+
+                    &:first-of-type {
+                        margin-top: 20px;
+                    }
+
+                    kbd {
+                        padding: 4px;
+                        font-size: .75em;
+                    }
+                }
+
+                button {
+                    margin-top: 30px;
+                }
+            }
+
+            .mine-tutorial-background { 
+                background-image: url('../../images/tutorial/mine-tutorial-background.png');
+            }
+        }
+
+        #end-tutorial-screen {
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            height: 100%;
+            width: 100%;
+
+            .content {
+                padding: 0px 100px;
+
+                text-align: center;
+                
+                h3 {
+                    font-size: 22px;
+                }
+
+                p {
+                    font-size: 20px;
+
+                    &:first-of-type {
+                        margin-top: 20px;
+                    }
+                }
+
+                button {
+                    margin-top: 30px;
                 }
             }
         }

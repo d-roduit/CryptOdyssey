@@ -1,4 +1,4 @@
-import countriesInfo from './countriesInfo.js';
+import countriesInfo from '../countriesInfo.js';
 
 class PlayerCountrySelect {
     constructor() {
@@ -39,11 +39,9 @@ class PlayerCountrySelect {
     initializeOptions() {
         const countryEntries = Object.entries(countriesInfo);
 
-        // const [firstCountryCode, firstCountryObject] = countryEntries[0];
+        const defaultCountryCode = 'DEFAULT';
 
-        const defaultCountyCode = 'DEFAULT';
-
-        this.updatePlayerCountry(defaultCountyCode);
+        this.updatePlayerCountry(defaultCountryCode);
 
         // Create options
         countryEntries.forEach(([countryCode, countryInfo]) => {
@@ -104,7 +102,9 @@ export const updatePlayerCountry = (countryCode, textContent) => {
 
 export const myself = document.getElementById('player-info-screen');
 export const playerNameInput = document.getElementById('player-name');
+export const playerNameErrorField = document.getElementById('player-name-error-field');
 export const playerCountry = document.getElementById('player-country');
+export const playerCountryErrorField = document.getElementById('player-country-error-field');
 export const autodetectCountryButton = document.getElementById('autodetect-country');
 export const playGameButton = document.getElementById('play-game');
 

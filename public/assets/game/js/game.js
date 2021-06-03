@@ -1,17 +1,39 @@
-import * as PresentationScreen from './PresentationScreen.js';
-import * as PlayerInfoScreen from './PlayerInfoScreen.js';
+import countriesInfo from './countriesInfo.js';
+import * as PresentationScreen from './screens/PresentationScreen.js';
+import * as PlayerInfoScreen from './screens/PlayerInfoScreen.js';
+import * as IntroductionTutorialScreen from './screens/IntroductionTutorialScreen.js';
+import * as MarketTutorialScreen from './screens/MarketTutorialScreen.js';
+import * as MineTutorialScreen from './screens/MineTutorialScreen.js';
+import * as EndTutorialScreen from './screens/EndTutorialScreen.js';
 import * as LocationManager from './LocationManager.js';
 import * as GameAnimation from './gameAnimation.js';
 import PlayerDB from './PlayerDB.js';
 import Player from './Player.js';
+import CookieManager from './CookieManager.js';
 
 let player = null;
+
+/*----------------------------------
+    PRE-GAME
+----------------------------------*/
 
 // Show the first screen (presentation screen)
 PresentationScreen.show();
 
 PresentationScreen.startGameButton.addEventListener('click', () => {
     PresentationScreen.hide();
+
+    const playernameFromCookie = CookieManager.getCookie(CookieManager.cookies.playername);
+    const countryCodeFromCookie = CookieManager.getCookie(CookieManager.cookies.countryCode);
+
+    if (playernameFromCookie !== '') {
+        PlayerInfoScreen.playerNameInput.value = playernameFromCookie;
+    }
+
+    if (countryCodeFromCookie !== '') {
+        PlayerInfoScreen.updatePlayerCountry(countryCodeFromCookie);
+    }
+
     PlayerInfoScreen.show();
 });
 
@@ -53,10 +75,27 @@ PlayerInfoScreen.playGameButton.addEventListener('click', () => {
     }
 
     // Check if playerCountryCode is a countryCode that we have in our list
-    // if (countriesInfo[playerCountryCode] != UNDEFIED OR NULL)
+    if (typeof countriesInfo[playerCountryCode] === 'undefined') {
+        errorMessages.playerCountryCode.push('Please choose a country among those proposed.');
+    }
+
+    let hasErrors = false;
 
     if (errorMessages.playername.length > 0) {
-        // Afficher toujours le premier message d'erreur ici
+        PlayerInfoScreen.playerNameErrorField.textContent = errorMessages.playername[0];
+        hasErrors = true;
+    } else {
+        PlayerInfoScreen.playerNameErrorField.textContent = '';
+    }
+
+    if (errorMessages.playerCountryCode.length > 0) {
+        PlayerInfoScreen.playerCountryErrorField.textContent = errorMessages.playerCountryCode[0];
+        hasErrors = true;
+    } else {
+        PlayerInfoScreen.playerCountryErrorField.textContent = '';
+    }
+
+    if (hasErrors) {
         return;
     }
 
@@ -80,31 +119,51 @@ PlayerInfoScreen.playGameButton.addEventListener('click', () => {
 
             console.log(player.toJSON());
 
+            CookieManager.setCookie(CookieManager.cookies.playername, player.playername, 365);
+            CookieManager.setCookie(CookieManager.cookies.countryCode, player.countryCode, 365);
+
             PlayerInfoScreen.hide();
             GameAnimation.backgroundMusic.play();
+
+            if (!player.hasCompletedTutorial) {
+                IntroductionTutorialScreen.playernameSpan.textContent = player.playername;
+                IntroductionTutorialScreen.show();
+                return;
+            }
+
             GameAnimation.startAnimating(18);
         })
         .catch((err) => console.log(err));
-
-    // if (player != null) {
-    //     PlayerInfoScreen.hide();
-    // } else {
-    //     player = new Player(playername);
-    //     player.countryCode = playerCountryCode;
-
-    //     PlayerDB.save(player)
-    //         .then(() => {
-    //             PlayerInfoScreen.hide();
-    //         })
-    //         .catch((err) => console.log(`Error: ${err.message}`));
-    // }
 });
 
-// const validatePlayerNameInput = () => {
+/*----------------------------------
+    TUTORIAL
+----------------------------------*/
 
-// };
+IntroductionTutorialScreen.goToMarketTutorialScreenBtn.addEventListener('click', () => {
+    MarketTutorialScreen.show();
+    IntroductionTutorialScreen.hide();
+});
 
-// PlayerInfoScreen.playerNameInput.addEventListener('keydown', checkPlayerName);
+MarketTutorialScreen.goToMineTutorialScreenBtn.addEventListener('click', () => {
+    MineTutorialScreen.show();
+    MarketTutorialScreen.hide();
+});
+
+MineTutorialScreen.goToEndTutorialScreenBtn.addEventListener('click', () => {
+    EndTutorialScreen.show();
+    MineTutorialScreen.hide();
+});
+
+EndTutorialScreen.goToGameBtn.addEventListener('click', () => {
+    EndTutorialScreen.hide();
+
+    GameAnimation.startAnimating(18);
+});
+
+/*----------------------------------
+    IN-GAME
+----------------------------------*/
 
 // const bitcoinSpan = document.getElementById('bitcoinSpan');
 // const ethereumSpan = document.getElementById('ethereumSpan');

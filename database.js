@@ -12,39 +12,35 @@ const getPlayer = (req, res) => {
             return;
         }
 
-        console.log(`doc returned: ${JSON.stringify(doc)}`);
-
         res.json(doc);
     });
 };
 
 const savePlayer = (req, res) => {
-    console.log('savePlayer');
     const playerObject = req.body;
 
     db.insert(playerObject, (err, newDoc) => {
-        if (!err) {
-            console.log(`${newDoc} inserted !`);
+        if (err) {
+            console.log(`Err: ${err}`);
             return;
         }
-        console.log(`Err: ${err}`);
+        console.log(`${newDoc} saved !`);
     });
 
     res.status(200).end();
 };
 
 const updatePlayer = (req, res) => {
-    console.log('savePlayer');
     const playerObject = req.body;
 
     db.update({ playername: req.params.playername }, playerObject, {}, (err, numReplaced) => {
         if (err) {
-            console.log(`${JSON.stringify(playerObject)} could not be updated. ${numReplaced} docs updated.`);
+            console.log(`${playerObject.playername} could not be updated. ${numReplaced} docs updated.`);
             res.status(500).end();
             return;
         }
 
-        console.log(`${JSON.stringify(playerObject)} updated ! ${numReplaced} docs updated.`);
+        console.log(`${playerObject.playername} updated ! ${numReplaced} docs updated.`);
     });
 
     res.status(200).end();

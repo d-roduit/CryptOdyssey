@@ -44,7 +44,7 @@
                             <button id="start-game">Play CryptOdyssey</button>
                             <button id="only-on-computer" disabled="disabled">CryptOdyssey is only playable on computer</button>
                         </div>
-                        <div class="blur-background"></div>
+                        <div class="blur-background background-image"></div>
                     </div>
 
                     <div id="player-info-screen">
@@ -54,10 +54,10 @@
                                 <div class="input-container">
                                     <label for="player-name" class="font-pixel">Set Your Player Name</label>
                                     <input type="text" id="player-name" class="input-pixel" placeholder="Player">
-                                    <p id="player-name-error-message" class="error-message font-pixel">Player name must be between 3 and 20 characters.</p>
+                                    <p id="player-name-error-field" class="error-message font-pixel"></p>
                                 </div>
                                 <div class="input-container">
-                                    <label for="" id="player-country-label" class="font-pixel">Choose Your Flag</label>
+                                    <label id="player-country-label" class="font-pixel">Choose Your Flag</label>
                                     <div class="player-country-container">
                                         <div id="player-country-select" class="style-pixel">
                                             <p id="player-country" class="font-pixel"></p>
@@ -66,12 +66,64 @@
                                         </div>
                                         <button id="autodetect-country" class="btn-pixel-normal">Auto-Detect</button>
                                     </div>
-                                    <p id="player-country-error-message" class="error-message font-pixel">Please choose an answer among those proposed.</p>
+                                    <p id="player-country-error-field" class="error-message font-pixel"></p>
                                 </div>
                             </fieldset>
                             <button id="play-game" class="btn-pixel-warning">Play</button>
                         </div>
-                        <div class="blur-background"></div>
+                        <div class="blur-background background-image"></div>
+                    </div>
+
+                    <div id="introduction-tutorial-screen">
+                        <div class="content">
+                            <h3 class="font-pixel">Welcome to CryptOdyssey, <span class="font-pixel" id="introduction-tutorial-screen-playername">Droduit</span> !</h3>
+                            <p>We are delighted to see that you want to embark on the crypto adventure with us !</p>
+                            <p>Before heading off to earn a living on your own, let's take a quick look at the different places you can visit.</p>
+                            <button class="btn-pixel-normal" id="go-to-market-tutorial-screen">Next</button>
+                        </div>
+                        <div class="blur-background background-image"></div>
+                    </div>
+
+                    <div id="market-tutorial-screen">
+                        <div class="content">
+                            <h3 class="font-pixel">Market</h3>
+                            <p>The market is where you can trade your coins for cryptos and vice versa.</p>
+                            <br/>
+                            <p>To open the market, move to the building door and press <kbd class="kbd-pixel">E</kbd>.</p>
+                            <button class="btn-pixel-normal" id="go-to-mine-tutorial-screen">Next</button>
+                        </div>
+                        <div class="market-tutorial-background background-image"></div>
+                    </div>
+
+                    <div id="mine-tutorial-screen">
+                        <div class="content">
+                            <h3 class="font-pixel">Mine</h3>
+                            <p>Use the mine to earn free cryptocurrencies by mining them.</p>
+                            <br/>
+                            <p>You will automatically be credited with a fraction of the crypto you have chosen at the end of the mining process.</p>
+                            <br/>
+                            <p>To start mining, move to the chair in front of the anvil and press <kbd class="kbd-pixel">E</kbd>.</p>
+                            <button class="btn-pixel-normal" id="go-to-end-tutorial-screen">Next</button>
+                        </div>
+                        <div class="mine-tutorial-background background-image"></div>
+                    </div>
+
+                    <div id="end-tutorial-screen">
+                        <div class="content">
+                            <h3 class="font-pixel">You are now ready to go !</h3>
+                            <p>This tutorial was as moving for you as it was for us.</p>
+                            <p>It always has a little effect on us to see new young crypto hunters start their odyssey.</p>
+                            <br/>
+                            <p>As they say, children grow up, we have to give them back their freedom.</p>
+                            <p>Before you leave, we would like to give you a small gift.</p>
+                            <br/>
+                            <p>To start your adventure off right, we'll credit you with 500 Coins!</p>
+                            <p>You will find these Coins in your wallet.</p>
+                            <br>
+                            <p>Make good use of it! </p>
+                            <button class="btn-pixel-warning" id="go-to-game">Finish</button>
+                        </div>
+                        <div class="blur-background background-image"></div>
                     </div>
 
                     <!-- <div class="market-interface">
@@ -181,21 +233,21 @@
                         <td class="keys">
                             <div class="directionKeysLayout">
                                 <div class="topRow">
-                                    <kbd>W</kbd>
+                                    <kbd class="kbd-pixel">W</kbd>
                                 </div>
                                 <div class="bottomRow">
-                                    <kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
+                                    <kbd class="kbd-pixel">A</kbd><kbd class="kbd-pixel">S</kbd><kbd class="kbd-pixel">D</kbd>
                                 </div>
                             </div>
                         </td>
                         <td class="action">Move</td>
                     </tr>
                     <tr>
-                        <td class="keys"><kbd>Shift</kbd></td>
+                        <td class="keys"><kbd class="kbd-pixel">Shift</kbd></td>
                         <td class="action">Wallet</td>
                     </tr>
                     <tr>
-                        <td class="keys"><kbd>Esc</kbd></td>
+                        <td class="keys"><kbd class="kbd-pixel">Esc</kbd></td>
                         <td class="action">Pause</td>
                     </tr>
                 </tbody>

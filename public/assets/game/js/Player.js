@@ -12,6 +12,7 @@ class Player {
             },
         };
         this.countryCode = 'DEFAULT';
+        this.hasCompletedTutorial = false;
         this.lastTurnedWheel = 0;
     }
 
@@ -21,6 +22,7 @@ class Player {
             wallet: this.wallet,
             countryCode: this.countryCode,
             lastTurnedWheel: this.lastTurnedWheel,
+            hasCompletedTutorial: this.hasCompletedTutorial,
         };
     }
 
@@ -36,6 +38,7 @@ class Player {
             player.wallet = playerObject.wallet;
             player.countryCode = playerObject.countryCode;
             player.lastTurnedWheel = playerObject.lastTurnedWheel;
+            player.hasCompletedTutorial = playerObject.hasCompletedTutorial;
         }
 
         return player;
