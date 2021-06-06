@@ -1,29 +1,24 @@
 footer {
-    padding: calc(10px + 2vw) 0px;
+    padding: calc(30px + 2vw) 0px;
 
     display: flex;
     justify-content: center;
+    align-items: center;
 
     @media screen and (min-width: 560px) {
-        padding: calc(20px + 1vw) 0px;
+        padding: calc(30px + 1vw) 0px;
     }
 
     #socialMedias-container {
         $github_color: #333;
 
-        min-width: 100px;
-        width: 50%;
-        max-width: 200px;
-
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        line-height: 0px;
 
         a {
             color: black;
             font-size: 22px;
 
-            padding: 10px;
+            line-height: 0px;
 
             &#github-icon:hover {
                 color: $github_color;

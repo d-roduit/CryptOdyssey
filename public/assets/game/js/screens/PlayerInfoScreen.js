@@ -1,4 +1,5 @@
 import countriesInfo from '../countriesInfo.js';
+import * as LocationManager from '../LocationManager.js';
 
 class PlayerCountrySelect {
     constructor() {
@@ -96,22 +97,52 @@ class PlayerCountrySelect {
 const playerCountrySelect = new PlayerCountrySelect();
 playerCountrySelect.initialize();
 
-export const updatePlayerCountry = (countryCode, textContent) => {
+const updatePlayerCountry = (countryCode, textContent) => {
     playerCountrySelect.updatePlayerCountry(countryCode, textContent);
 };
 
-export const myself = document.getElementById('player-info-screen');
-export const playerNameInput = document.getElementById('player-name');
-export const playerNameErrorField = document.getElementById('player-name-error-field');
-export const playerCountry = document.getElementById('player-country');
-export const playerCountryErrorField = document.getElementById('player-country-error-field');
-export const autodetectCountryButton = document.getElementById('autodetect-country');
-export const playGameButton = document.getElementById('play-game');
+const myself = document.getElementById('player-info-screen');
+const playerNameInput = document.getElementById('player-name');
+const playerNameErrorField = document.getElementById('player-name-error-field');
+const playerCountry = document.getElementById('player-country');
+const playerCountryLabel = document.getElementById('player-country-label');
+const playerCountryErrorField = document.getElementById('player-country-error-field');
+const autodetectCountryButton = document.getElementById('autodetect-country');
+const playGameButton = document.getElementById('play-game');
 
-export const show = () => {
+autodetectCountryButton.addEventListener('click', () => {
+    const tempPlayerCountryLabelContent = playerCountryLabel.textContent;
+    const spinnerIcon = '<i style="font-size:15px;" class="fas fa-spinner fa-pulse"></i>';
+
+    playerCountryLabel.innerHTML = `${tempPlayerCountryLabelContent} ${spinnerIcon}`;
+
+    LocationManager.getUserCountryCode().then((countryCode) => {
+        const countryInfo = LocationManager.getCountryInfo(countryCode);
+        updatePlayerCountry(countryCode, `${countryInfo.flag} ${countryInfo.name}`);
+        playerCountryLabel.textContent = tempPlayerCountryLabelContent;
+    }).catch((err) => {
+        console.log(`Error: ${err}`);
+        playerCountryLabel.textContent = tempPlayerCountryLabelContent;
+    });
+});
+
+const show = () => {
     myself.style.display = 'flex';
 };
 
-export const hide = () => {
+const hide = () => {
     myself.style.display = 'none';
+};
+
+export default {
+    updatePlayerCountry,
+    myself,
+    playerNameInput,
+    playerNameErrorField,
+    playerCountry,
+    playerCountryErrorField,
+    autodetectCountryButton,
+    playGameButton,
+    show,
+    hide,
 };

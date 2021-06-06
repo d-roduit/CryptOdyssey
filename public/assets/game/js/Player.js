@@ -2,7 +2,7 @@ class Player {
     constructor(playername) {
         this.playername = playername;
         this.wallet = {
-            coins: 0,
+            coin: 500,
             crypto: {
                 bitcoin: 0,
                 ethereum: 0,

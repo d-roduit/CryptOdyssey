@@ -29,9 +29,9 @@
     }
     
     .cryptoInformation {
-        text-align: center;
+        text-align: justify;
         max-width: 900px;
-        line-height: 1.5em;
+        line-height: 1.8em;
         margin: auto;
     }
 
@@ -87,18 +87,34 @@
                 }
             }
     
-            .container__image {
+            .image-container {
                 text-align: center;
                 align-self: center;
 
+                img {
+                    height: 60px;
+                    max-height: 60px;
+                    width: 60px;
+                    min-width: 60px;
+                    max-width: 60px;
+                }
+
                 @media screen and (min-width: 768px) {
-                    margin-left: 30px;
-                    margin-right: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    margin-left: 40px;
+                    margin-right: 70px;
                 }
             }
             
-            .container__feature {
-                flex: 1;
+            .feature-container {
+                width: 100%;
+
+                @media screen and (min-width: 768px) {
+                    width: 80%;
+                }
 
                 .cryptoName{
                     margin-top: 10px;
@@ -115,26 +131,6 @@
                     margin-top: 10px;
 
                     line-height: 1.5em;
-                }
-            }
-
-            &.reverse {
-            
-                @media screen and (min-width: 768px) {
-                    flex-direction: row-reverse;
-                }
-    
-                p {
-                    @media screen and (min-width: 768px) {
-                        text-align: right;
-                    }
-                }
-
-                .container__image {
-                    @media screen and (min-width: 768px) {
-                        margin-left: 50px;
-                        margin-right: 30px;
-                    }
                 }
             }
         }

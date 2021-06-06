@@ -188,6 +188,7 @@ fieldset.fieldset-pixel {
         padding: 0px 10px;
 
         @extend %pixel-font;
+        font-size: 14px;
         color: white;
     }
 }

@@ -1,0 +1,40 @@
+<svg id="coin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="60" viewBox="0 0 45 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffd800;
+      }
+
+      .cls-2 {
+        fill: #ffae00;
+      }
+
+      .cls-3 {
+        fill: #fff000;
+      }
+    </style>
+  </defs>
+  <image id="Calque_2" data-name="Calque 2" width="45" height="60" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAA8CAYAAADykDOkAAAAkElEQVRoge3aQQ6AIAwAwWL8//v8DX4AND2wUrNz1rAH0gtt/Yqsnv7jXct8fCwIWM5oitGU8+GcFVMie9Zwqng9KEZTyk4PckpkDdu8HhSjKUZTjKYYTTGaYjTFaIrRFKMpRlOMphhNMZpiNMVoitGUsm8us12LHd5ifLH9lNGU3+17kFPFbbEtGU2pFx0RNxg7CVZ1VY1aAAAAAElFTkSuQmCC"/>
+  <rect class="cls-1" y="12" width="6" height="30"/>
+  <rect id="Rectangle_1_copie" data-name="Rectangle 1 copie" class="cls-1" x="6" y="6" width="6" height="42"/>
+  <rect id="Rectangle_1_copie_2" data-name="Rectangle 1 copie 2" class="cls-1" x="12" y="6" width="6" height="48"/>
+  <rect id="Rectangle_1_copie_5" data-name="Rectangle 1 copie 5" class="cls-2" y="42" width="6" height="6"/>
+  <rect id="Rectangle_1_copie_6" data-name="Rectangle 1 copie 6" class="cls-2" x="6" y="48" width="6" height="6"/>
+  <rect id="Rectangle_1_copie_8" data-name="Rectangle 1 copie 8" class="cls-3" x="12" width="21" height="6"/>
+  <rect id="Rectangle_1_copie_7" data-name="Rectangle 1 copie 7" class="cls-2" x="12" y="54" width="21" height="6"/>
+  <rect id="Rectangle_1_copie_9" data-name="Rectangle 1 copie 9" class="cls-3" x="33" y="6" width="6" height="6"/>
+  <rect id="Rectangle_1_copie_10" data-name="Rectangle 1 copie 10" class="cls-3" x="39" y="12" width="6" height="6"/>
+  <rect id="Rectangle_1_copie_11" data-name="Rectangle 1 copie 11" class="cls-1" x="39" y="18" width="6" height="30"/>
+  <rect id="Rectangle_1_copie_12" data-name="Rectangle 1 copie 12" class="cls-1" x="33" y="12" width="6" height="42"/>
+  <rect id="Rectangle_1_copie_13" data-name="Rectangle 1 copie 13" class="cls-1" x="22" y="16" width="6" height="27"/>
+  <rect id="Rectangle_1_copie_18" data-name="Rectangle 1 copie 18" class="cls-1" x="28" y="12" width="5" height="4"/>
+  <rect id="Rectangle_1_copie_19" data-name="Rectangle 1 copie 19" class="cls-1" x="18" y="12" width="5" height="4"/>
+  <rect id="Rectangle_1_copie_20" data-name="Rectangle 1 copie 20" class="cls-1" x="18" y="42" width="5" height="6"/>
+  <rect id="Rectangle_1_copie_21" data-name="Rectangle 1 copie 21" class="cls-1" x="28" y="42" width="5" height="6"/>
+  <rect id="Rectangle_1_copie_22" data-name="Rectangle 1 copie 22" class="cls-3" x="23" y="43" width="5" height="5"/>
+  <rect id="Rectangle_1_copie_23" data-name="Rectangle 1 copie 23" class="cls-2" x="23" y="12" width="5" height="4"/>
+  <rect id="Rectangle_1_copie_16" data-name="Rectangle 1 copie 16" class="cls-2" x="28" y="16" width="5" height="27"/>
+  <rect id="Rectangle_1_copie_17" data-name="Rectangle 1 copie 17" class="cls-3" x="18" y="16" width="5" height="27"/>
+  <rect id="Rectangle_1_copie_14" data-name="Rectangle 1 copie 14" class="cls-1" x="18" y="48" width="15" height="6"/>
+  <rect id="Rectangle_1_copie_15" data-name="Rectangle 1 copie 15" class="cls-1" x="18" y="6" width="15" height="6"/>
+</svg>
