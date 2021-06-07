@@ -4,9 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "gulp"
+    "start": "node server.js",
+    "postinstall": "gulp prodBuild",
+    "dev": "gulp devBuild"
   },
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d-roduit/CryptOdyssey.git"
+  },
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",

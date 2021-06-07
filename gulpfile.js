@@ -33,8 +33,13 @@ async function startAutoReloadServer() {
     nodemon({});
 }
 
-async function compileSass() {
+async function compileAndWatchSass() {
     exec(`npx sass ${cssRoutes.game.src}:${cssRoutes.game.dist} ${cssRoutes.website.src}:${cssRoutes.website.dist} --watch --style=compressed --source-map`);
 }
 
-exports.default = parallel(compileSass, startAutoReloadServer);
+async function compileSass() {
+    exec(`npx sass ${cssRoutes.game.src}:${cssRoutes.game.dist} ${cssRoutes.website.src}:${cssRoutes.website.dist} --style=compressed --source-map`);
+}
+
+exports.devBuild = parallel(compileAndWatchSass, startAutoReloadServer);
+exports.prodBuild = compileSass;
