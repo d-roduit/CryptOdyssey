@@ -2,7 +2,7 @@ import * as Map from './map.js';
 
 /* eslint-disable max-len */
 export const character = {
-    x: 250, // horizontal position
+    x: 1000, // horizontal position
     y: 300, // vertical position
     width: 64,
     height: 64,
@@ -10,6 +10,8 @@ export const character = {
     frameY: 10, // vertical coordinate
     speed: 6, // how many pixels we move per frame of animation
     moving: false, // use this to switch between standing and moving animation
+    isInMarketZone: false,
+    isInMineZone: false,
 };
 
 // ----------Spritesheets------------------
@@ -28,7 +30,9 @@ const keys = [];
 // callback function. Function that will run whatever code we put in it. e = event object.
 window.addEventListener('keydown', (e) => {
     keys[e.key] = true; // when a key is pressed, we add it to our array
-    character.moving = true;
+    if (keys.w || keys.a || keys.s || keys.d) {
+        character.moving = true;
+    }
 });
 
 window.addEventListener('keyup', (e) => {
@@ -62,12 +66,12 @@ export const movePlayer = (canvas) => {
         character.frameY = 8;
         character.moving = true;
     }
-    if (keys.a && character.x > 0 && !arrayAlreadyHasArray(Map.collisionBlocksLeft, [character.x, character.y])) {
+    if (keys.a && character.x > 448 && !arrayAlreadyHasArray(Map.collisionBlocksLeft, [character.x, character.y])) {
         character.x -= character.speed;
         character.frameY = 9;
         character.moving = true;
     }
-    if (keys.s && character.y < canvas.height - character.height && !arrayAlreadyHasArray(Map.collisionBlocksDown, [character.x, character.y])) {
+    if (keys.s && character.y < canvas.height - 612 - character.height && !arrayAlreadyHasArray(Map.collisionBlocksDown, [character.x, character.y])) {
         character.y += character.speed;
         character.frameY = 10;
         character.moving = true;
@@ -84,5 +88,29 @@ export const handlePlayerFrame = () => {
         character.frameX += 1;
     } else {
         character.frameX = 0;
+    }
+};
+
+// ----------------Open interface--------------
+
+// define market zone
+export const defineMarketZone = (posTopLeftX, posTopLeftY, posBottomRightX, posBottomRightY) => {
+    const charPosX = character.x + character.width / 2;
+    const charPosY = character.y + character.height;
+    if (charPosX > posTopLeftX && charPosX < posBottomRightX && charPosY > posTopLeftY && charPosY < posBottomRightY) {
+        character.isInMarketZone = true;
+    } else {
+        character.isInMarketZone = false;
+    }
+};
+
+// define market zone
+export const defineMineZone = (posTopLeftX, posTopLeftY, posBottomRightX, posBottomRightY) => {
+    const charPosX = character.x + character.width / 2;
+    const charPosY = character.y + character.height;
+    if (charPosX > posTopLeftX && charPosX < posBottomRightX && charPosY > posTopLeftY && charPosY < posBottomRightY) {
+        character.isInMineZone = true;
+    } else {
+        character.isInMineZone = false;
     }
 };

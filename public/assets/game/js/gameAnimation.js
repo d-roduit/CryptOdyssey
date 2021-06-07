@@ -6,8 +6,8 @@ const canvas = document.getElementById('game-canvas');
 
 const context = canvas.getContext('2d');
 
-const canvasWidth = 960;
-const canvasHeight = 512;
+const canvasWidth = 1408;
+const canvasHeight = 1120;
 
 // ----------Animation loop-----------------
 let fpsInterval;
@@ -27,9 +27,9 @@ const animate = () => {
 
         // draw map
         for (let l = 0; l < Map.map.layers.length; l += 1) {
-            for (let x = 0; x < Map.map.rows; x += 1) {
-                for (let y = 0; y < Map.map.columns; y += 1) {
-                    const tilesheetIndex = (Map.map.layers[l].data[y * Map.map.columns + x + 14]) - 1;
+            for (let x = 0; x < Map.map.columns; x += 1) {
+                for (let y = 0; y < Map.map.rows; y += 1) {
+                    const tilesheetIndex = (Map.map.layers[l].data[y * Map.map.columns + x]) - 1;
                     const tileX = x * Map.map.tsize;
                     const tileY = y * Map.map.tsize;
                     const sX = (tilesheetIndex % tilesheetWidth) * Map.map.tsize;
@@ -47,9 +47,9 @@ const animate = () => {
 
         // draw front layers
         for (let l = 0; l < Map.map.frontLayers.length; l += 1) {
-            for (let x = 0; x < Map.map.rows; x += 1) {
-                for (let y = 0; y < Map.map.columns; y += 1) {
-                    const tilesheetIndex = (Map.map.frontLayers[l].data[y * Map.map.columns + x + 14]) - 1;
+            for (let x = 0; x < Map.map.columns; x += 1) {
+                for (let y = 0; y < Map.map.rows; y += 1) {
+                    const tilesheetIndex = (Map.map.frontLayers[l].data[y * Map.map.columns + x]) - 1;
                     const tileX = x * Map.map.tsize;
                     const tileY = y * Map.map.tsize;
                     const sX = (tilesheetIndex % tilesheetWidth) * Map.map.tsize;
@@ -60,8 +60,14 @@ const animate = () => {
             }
         }
 
+        // character movements
         Character.movePlayer(canvas);
         Character.handlePlayerFrame();
+
+        // Market zone
+        Character.defineMarketZone(544, 384, 640, 448);
+        // Mine zone
+        Character.defineMineZone(1280, 128, 1312, 160);
     }
 };
 
@@ -70,6 +76,11 @@ export const startAnimating = (fps) => {
     fpsInterval = 1000 / fps; // how long we wait before we serve the next frame
     then = Date.now();
     animate();
+};
+
+// Market zone
+export const isInMarketZone = (openInterface) => {
+    Character.defineOpeningZone(544, 384, 640, 448, openInterface);
 };
 
 // music

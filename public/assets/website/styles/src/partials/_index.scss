@@ -29,6 +29,8 @@
 
             margin: auto;
 
+            overflow: hidden;
+
             @media screen and (min-width: 1200px) {
                 height: 512px;
                 width: 960px;
@@ -39,8 +41,9 @@
             #game-canvas {
                 display: none;
 
-                height: 100%;
-                width: 100%;
+                position: absolute;
+                top: 0px;
+                right: 0px;
 
                 @media screen and (min-width: 1200px) {
                     display: block;
