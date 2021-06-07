@@ -425,6 +425,49 @@
             }
         }
 
+        #menu-interface {
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            height: 100%;
+            width: 100%;
+
+            background-color: rgba(0,0,0,0.85);
+
+            #menu-fieldset {
+                width: 35%;
+                
+                padding: 30px;
+
+                legend {
+                    margin: auto;
+
+                    padding: 0px 20px;
+
+                    font-size: 16px;
+                }
+
+                .setting {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    padding: 4px 0px 4px 15px;
+
+                    background-color: rgba(255,255,255,.05);
+                    border: 1px solid rgba(255,255,255,.1);
+                }
+
+                #back-to-game-btn {
+                    display: block;
+
+                    margin: auto;
+                    margin-top: 30px;
+                }
+            }
+        }
+
         #market-interface {
             display: none;
             justify-content: center;

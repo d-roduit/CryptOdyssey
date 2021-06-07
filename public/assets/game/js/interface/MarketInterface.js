@@ -95,11 +95,13 @@ const MarketInterface = {
     },
     isOpen: false,
     show() {
+        if (this.isOpen) return;
         this.market.reset();
         myself.style.display = 'flex';
         this.isOpen = true;
     },
     hide() {
+        if (!this.isOpen) return;
         myself.style.display = 'none';
         this.isOpen = false;
     },

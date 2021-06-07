@@ -11,6 +11,9 @@ class Player {
                 cardano: 0,
             },
         };
+        this.settings = {
+            hasMutedMusic: false,
+        };
         this.countryCode = 'DEFAULT';
         this.hasCompletedTutorial = false;
         this.lastTurnedWheel = 0;
@@ -20,9 +23,10 @@ class Player {
         return {
             playername: this.playername,
             wallet: this.wallet,
+            settings: this.settings,
             countryCode: this.countryCode,
-            lastTurnedWheel: this.lastTurnedWheel,
             hasCompletedTutorial: this.hasCompletedTutorial,
+            lastTurnedWheel: this.lastTurnedWheel,
         };
     }
 
@@ -36,9 +40,10 @@ class Player {
         if (playerObject !== null) {
             player = new Player(playerObject.playername);
             player.wallet = playerObject.wallet;
+            player.settings = playerObject.settings;
             player.countryCode = playerObject.countryCode;
-            player.lastTurnedWheel = playerObject.lastTurnedWheel;
             player.hasCompletedTutorial = playerObject.hasCompletedTutorial;
+            player.lastTurnedWheel = playerObject.lastTurnedWheel;
         }
 
         return player;

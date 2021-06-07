@@ -10,6 +10,7 @@ import PlayerDB from './PlayerDB.js';
 import Player from './Player.js';
 import CookieManager from './CookieManager.js';
 import CryptoUpdatesManager from './CryptoUpdatesManager.js';
+import MenuInterface from './interface/MenuInterface.js';
 import MarketInterface from './interface/MarketInterface.js';
 import { character } from './character.js';
 
@@ -67,18 +68,11 @@ const calculateExchange = () => {
         const fromCurrencyCoinValue = cryptoPrices[fromCurrencyString] ?? 1;
         const toCurrencyCoinValue = cryptoPrices[toCurrencyString] ?? 1;
 
-        console.log(`cryptoPrices: ${JSON.stringify(cryptoPrices)}`);
-        console.log(`fromCurrencyCoinValue: ${fromCurrencyCoinValue}`);
-        console.log(`toCurrencyCoinValue: ${toCurrencyCoinValue}`);
-        console.log(`amountToExchange: ${amountToExchange}`);
-
         const amountToCredit = parseFloat(
             (
                 (amountToExchange * fromCurrencyCoinValue) / toCurrencyCoinValue
             ).toFixed(nbDecimal),
         );
-
-        console.log(`amountToCredit: ${amountToCredit}`);
 
         MarketInterface.market.exchangeAmountResultElement.textContent = amountToCredit;
     }
@@ -94,7 +88,6 @@ CryptoUpdatesManager.addUpdateListener((data) => {
         MarketInterface.wallet.update(player, playerCoinValues);
 
         if (MarketInterface.isOpen) {
-            console.log('Market is open. calculate exchange again...');
             calculateExchange();
         }
     }
@@ -104,20 +97,49 @@ const initializeGameListeners = () => {
     window.addEventListener('keydown', (event) => {
         switch (event.key) {
         case 'e':
-            if (!MarketInterface.isOpen && character.isInMarketZone) {
-                MarketInterface.show();
-                GameAnimation.pause();
+            if (!MenuInterface.isOpen) {
+                if (character.isInMarketZone) {
+                    MarketInterface.show();
+                    GameAnimation.pause();
+                }
             }
             break;
         case 'Escape':
             if (MarketInterface.isOpen) {
                 MarketInterface.hide();
                 GameAnimation.play();
+                return;
             }
+
+            if (MenuInterface.isOpen) {
+                MenuInterface.hide();
+                GameAnimation.play();
+                return;
+            }
+
+            MenuInterface.show();
+            GameAnimation.pause();
             break;
         default:
             break;
         }
+    });
+
+    MenuInterface.settings.music.button.addEventListener('click', () => {
+        if (MenuInterface.settings.music.isMuted()) {
+            MenuInterface.settings.music.unmute();
+            player.settings.hasMutedMusic = false;
+        } else {
+            MenuInterface.settings.music.mute();
+            player.settings.hasMutedMusic = true;
+        }
+
+        PlayerDB.update(player);
+    });
+
+    MenuInterface.backToGameBtn.addEventListener('click', () => {
+        MenuInterface.hide();
+        GameAnimation.play();
     });
 
     MarketInterface.market.marketCloseBtn.addEventListener('click', () => {
@@ -131,7 +153,6 @@ const initializeGameListeners = () => {
         const amountToExchangeString = MarketInterface.market.exchangeAmountInput.value;
 
         if (amountToExchangeString === '') {
-            console.log('return 1');
             return;
         }
 
@@ -139,7 +160,6 @@ const initializeGameListeners = () => {
         const toCurrencyString = MarketInterface.market.toCurrencyElement.children[0]?.getAttribute('data-currency');
 
         if (!fromCurrencyString || !toCurrencyString) {
-            console.log('return 2');
             return;
         }
 
@@ -153,7 +173,6 @@ const initializeGameListeners = () => {
         const isAmountToCreditStringValid = numberRegex.test(amountToCreditString);
 
         if (!isAmountToCreditStringValid) {
-            console.log('return 3');
             return;
         }
 
@@ -171,12 +190,10 @@ const initializeGameListeners = () => {
 
         // If the player has in its wallet the currencies for the exchange
         if (typeof fromCurrencyPlayerAmount === 'undefined' || typeof toCurrencyPlayerAmount === 'undefined') {
-            console.log('return 4');
             return;
         }
 
         if (amountToExchange > fromCurrencyPlayerAmount) {
-            console.log('return 5');
             return;
         }
 
@@ -205,8 +222,6 @@ const initializeGameListeners = () => {
                 parseFloat(calculationAnswer).toFixed(nbDecimal),
             );
         }
-
-        console.log(`Exchange MADE ! Player : ${player.toJSON()}`);
 
         PlayerDB.update(player);
 
@@ -295,20 +310,14 @@ PlayerInfoScreen.playGameButton.addEventListener('click', () => {
             // If player does not exist in DB
             if (playerFromDB === null) {
                 // Create the player
-                console.log(`Player ${playername} does not exist. Creating the player...`);
                 player = new Player(playername);
                 player.countryCode = playerCountryCode;
-                console.log(`Saving player ${player.toJSON()} to DB...`);
                 PlayerDB.save(player);
             } else {
-                console.log(`Player ${playername} found in DB.`);
                 player = playerFromDB;
                 player.countryCode = playerCountryCode;
-                console.log(`Updating player ${player.toJSON()} in DB...`);
                 PlayerDB.update(player);
             }
-
-            console.log(player.toJSON());
 
             CookieManager.setCookie(CookieManager.cookies.playername, player.playername, 365);
             CookieManager.setCookie(CookieManager.cookies.countryCode, player.countryCode, 365);
@@ -318,7 +327,12 @@ PlayerInfoScreen.playGameButton.addEventListener('click', () => {
             MarketInterface.wallet.update(player, playerCoinValues);
 
             PlayerInfoScreen.hide();
-            GameAnimation.backgroundMusic.play();
+
+            if (player.settings.hasMutedMusic) {
+                MenuInterface.settings.music.mute();
+            }
+
+            MenuInterface.settings.music.play();
 
             if (!player.hasCompletedTutorial) {
                 IntroductionTutorialScreen.playernameSpan.textContent = player.playername;
@@ -329,8 +343,6 @@ PlayerInfoScreen.playGameButton.addEventListener('click', () => {
             initializeGameListeners();
 
             GameAnimation.startAnimating(18);
-
-            MarketInterface.show();
         })
         .catch((err) => console.log(err));
 });
@@ -363,8 +375,6 @@ EndTutorialScreen.goToGameBtn.addEventListener('click', () => {
     initializeGameListeners();
 
     GameAnimation.startAnimating(18);
-
-    MarketInterface.show();
 });
 
 /*----------------------------------

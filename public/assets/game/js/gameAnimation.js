@@ -95,7 +95,3 @@ export const startAnimating = (fps) => {
 export const isInMarketZone = (openInterface) => {
     Character.defineOpeningZone(544, 384, 640, 448, openInterface);
 };
-
-// music
-export const backgroundMusic = new Audio('assets/game/sounds/TownTheme.mp3');
-backgroundMusic.loop = true;
