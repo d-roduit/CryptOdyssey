@@ -17,6 +17,7 @@
 const { parallel } = require('gulp');
 const { exec } = require('child_process');
 const nodemon = require('nodemon');
+const fs = require('fs');
 
 const cssRoutes = {
     game: {
@@ -41,5 +42,25 @@ async function compileSass() {
     exec(`npx sass ${cssRoutes.game.src}:${cssRoutes.game.dist} ${cssRoutes.website.src}:${cssRoutes.website.dist} --style=compressed --source-map`);
 }
 
+/**
+ * This function is only used to create the DB files during the build phase
+ * of Heroku, to bypass the later ephemeral filesystem where you cannot create files anymore.
+ */
+async function createDBFiles() {
+    const dbFilesToCreate = [
+        'players.db',
+    ];
+
+    dbFilesToCreate.forEach((dbFile) => {
+        fs.appendFile(dbFile, '', (err) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            console.log(`${dbFile} saved.`);
+        });
+    });
+}
+
 exports.devBuild = parallel(compileAndWatchSass, startAutoReloadServer);
-exports.prodBuild = compileSass;
+exports.prodBuild = parallel(createDBFiles, compileSass);
