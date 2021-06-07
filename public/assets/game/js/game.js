@@ -9,9 +9,11 @@ import * as GameAnimation from './gameAnimation.js';
 import PlayerDB from './PlayerDB.js';
 import Player from './Player.js';
 import CookieManager from './CookieManager.js';
+import CryptoPricesInterface from './interface/CryptoPricesInterface.js';
 import CryptoUpdatesManager from './CryptoUpdatesManager.js';
 import MenuInterface from './interface/MenuInterface.js';
 import MarketInterface from './interface/MarketInterface.js';
+import WalletInterface from './interface/WalletInterface.js';
 import { character } from './character.js';
 
 const nbDecimal = 3;
@@ -82,8 +84,12 @@ const calculateExchange = () => {
 CryptoUpdatesManager.addUpdateListener((data) => {
     cryptoPrices = data;
 
+    CryptoPricesInterface.update(cryptoPrices);
+
     if (player != null) {
         playerCoinValues.update(player, cryptoPrices);
+
+        WalletInterface.update(player, playerCoinValues);
 
         MarketInterface.wallet.update(player, playerCoinValues);
 
@@ -96,9 +102,17 @@ CryptoUpdatesManager.addUpdateListener((data) => {
 const initializeGameListeners = () => {
     window.addEventListener('keydown', (event) => {
         switch (event.key) {
+        case 'Shift':
+            if (!WalletInterface.isOpen && !MarketInterface.isOpen && !MenuInterface.isOpen) {
+                CryptoPricesInterface.hide();
+                WalletInterface.show();
+                GameAnimation.pause();
+            }
+            break;
         case 'e':
             if (!MenuInterface.isOpen) {
                 if (character.isInMarketZone) {
+                    CryptoPricesInterface.hide();
                     MarketInterface.show();
                     GameAnimation.pause();
                 }
@@ -107,18 +121,35 @@ const initializeGameListeners = () => {
         case 'Escape':
             if (MarketInterface.isOpen) {
                 MarketInterface.hide();
+                CryptoPricesInterface.show();
                 GameAnimation.play();
                 return;
             }
 
             if (MenuInterface.isOpen) {
                 MenuInterface.hide();
+                CryptoPricesInterface.show();
                 GameAnimation.play();
                 return;
             }
 
+            CryptoPricesInterface.hide();
             MenuInterface.show();
             GameAnimation.pause();
+            break;
+        default:
+            break;
+        }
+    });
+
+    window.addEventListener('keyup', (event) => {
+        switch (event.key) {
+        case 'Shift':
+            if (WalletInterface.isOpen) {
+                WalletInterface.hide();
+                CryptoPricesInterface.show();
+                GameAnimation.play();
+            }
             break;
         default:
             break;
@@ -139,11 +170,13 @@ const initializeGameListeners = () => {
 
     MenuInterface.backToGameBtn.addEventListener('click', () => {
         MenuInterface.hide();
+        CryptoPricesInterface.show();
         GameAnimation.play();
     });
 
     MarketInterface.market.marketCloseBtn.addEventListener('click', () => {
         MarketInterface.hide();
+        CryptoPricesInterface.show();
         GameAnimation.play();
     });
 
@@ -229,6 +262,7 @@ const initializeGameListeners = () => {
 
         MarketInterface.market.reset();
         MarketInterface.wallet.update(player, playerCoinValues);
+        WalletInterface.update(player, playerCoinValues);
     });
 };
 
@@ -324,6 +358,7 @@ PlayerInfoScreen.playGameButton.addEventListener('click', () => {
 
             playerCoinValues.update(player, cryptoPrices);
 
+            WalletInterface.update(player, playerCoinValues);
             MarketInterface.wallet.update(player, playerCoinValues);
 
             PlayerInfoScreen.hide();
@@ -339,6 +374,8 @@ PlayerInfoScreen.playGameButton.addEventListener('click', () => {
                 IntroductionTutorialScreen.show();
                 return;
             }
+
+            CryptoPricesInterface.show();
 
             initializeGameListeners();
 
@@ -371,6 +408,8 @@ EndTutorialScreen.goToGameBtn.addEventListener('click', () => {
 
     player.hasCompletedTutorial = true;
     PlayerDB.update(player);
+
+    CryptoPricesInterface.show();
 
     initializeGameListeners();
 

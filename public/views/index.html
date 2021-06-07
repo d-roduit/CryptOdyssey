@@ -166,10 +166,10 @@
                             <button id="exchange-btn" class="btn-pixel-warning">Exchange</button>
                         </fieldset>
 
-                        <fieldset id="wallet-fieldset" class="fieldset-pixel">
+                        <fieldset id="market-wallet-fieldset" class="fieldset-pixel">
                             <legend>Wallet</legend>
 
-                            <div id="wallet-tables-container">
+                            <div id="market-wallet-tables-container">
                                 <div class="table">
                                     <div class="row">
                                         <div id="coin-logo-container" class="column currency-logo-container">
@@ -234,6 +234,118 @@
                         </fieldset>
                     </div>
 
+                    <div id="crypto-prices-interface">
+                        <fieldset id="crypto-prices-fieldset" class="fieldset-pixel">
+                            <legend>Crypto Prices</legend>
+                            <div id="crypto-prices-container">
+                                <div class="line">
+                                    <div class="crypto-info">
+                                        <img class="crypto-icon" src="assets/shared/images/currencies/bitcoin.svg" alt="Bitcoin">
+                                        <p class="crypto-name font-pixel">Bitcoin</p>
+                                    </div>
+                                    <p class="crypto-price font-pixel"><span id="bitcoin-price"></span> Coin</p>
+                                </div>
+                                <div class="line">
+                                    <div class="crypto-info">
+                                        <img class="crypto-icon" src="assets/shared/images/currencies/ethereum.svg" alt="Ethereum">
+                                        <p class="crypto-name font-pixel">Ethereum</p>
+                                    </div>
+                                    <p class="crypto-price font-pixel"><span id="ethereum-price"></span> Coin</p>
+                                </div>
+                                <div class="line">
+                                    <div class="crypto-info">
+                                        <img class="crypto-icon" src="assets/shared/images/currencies/swissborg.svg" alt="Swissborg">
+                                        <p class="crypto-name font-pixel">Swissborg</p>
+                                    </div>
+                                    <p class="crypto-price font-pixel"><span id="swissborg-price"></span> Coin</p>
+                                </div>
+                                <div class="line">
+                                    <div class="crypto-info">
+                                        <img class="crypto-icon" src="assets/shared/images/currencies/tether.svg" alt="Tether">
+                                        <p class="crypto-name font-pixel">Tether</p>
+                                    </div>
+                                    <p class="crypto-price font-pixel"><span id="tether-price"></span> Coin</p>
+                                </div>
+                                <div class="line">
+                                    <div class="crypto-info">
+                                        <img class="crypto-icon" src="assets/shared/images/currencies/cardano.svg" alt="Cardano">
+                                        <p class="crypto-name font-pixel">Cardano</p>
+                                    </div>
+                                    <p class="crypto-price font-pixel"><span id="cardano-price"></span> Coin</p>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div id="wallet-interface">
+                        <fieldset id="wallet-fieldset" class="fieldset-pixel">
+                            <legend>Wallet</legend>
+
+                            <div id="wallet-tables-container">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="column currency-logo-container">
+                                            <img data-currency="coin" class="currency-logo" src="assets/shared/images/currencies/coin.svg" alt="coin">
+                                        </div>
+                                        <div class="column amounts">
+                                            <p class="coin-value font-pixel"><span id="wallet-interface-coin-amount">--</span> Coin</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="column currency-logo-container">
+                                            <img data-currency="bitcoin" class="currency-logo" src="assets/shared/images/currencies/bitcoin.svg" alt="bitcoin">
+                                        </div>
+                                        <div class="column amounts">
+                                            <p class="coin-value font-pixel"><span id="wallet-interface-bitcoin-coin-value">--</span> Coin</p>
+                                            <p class="crypto-amount font-pixel"><span id="wallet-interface-bitcoin-amount">--</span> BTC</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="column currency-logo-container">
+                                            <img data-currency="ethereum" class="currency-logo" src="assets/shared/images/currencies/ethereum.svg" alt="ethereum">
+                                        </div>
+                                        <div class="column amounts">
+                                            <p class="coin-value font-pixel"><span id="wallet-interface-ethereum-coin-value">--</span> Coin</p>
+                                            <p class="crypto-amount font-pixel"><span id="wallet-interface-ethereum-amount">--</span> ETH</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="column currency-logo-container">
+                                            <img data-currency="swissborg" class="currency-logo" src="assets/shared/images/currencies/swissborg.svg" alt="swissborg">
+                                        </div>
+                                        <div class="column amounts">
+                                            <p class="coin-value font-pixel"><span id="wallet-interface-swissborg-coin-value">--</span> Coin</p>
+                                            <p class="crypto-amount font-pixel"><span id="wallet-interface-swissborg-amount">--</span> CHSB</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column currency-logo-container">
+                                            <img data-currency="tether" class="currency-logo" src="assets/shared/images/currencies/tether.svg" alt="tether">
+                                        </div>
+                                        <div class="column amounts">
+                                            <p class="coin-value font-pixel"><span id="wallet-interface-tether-coin-value">--</span> Coin</p>
+                                            <p class="crypto-amount font-pixel"><span id="wallet-interface-tether-amount">--</span> USDT</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column currency-logo-container">
+                                            <img data-currency="cardano" class="currency-logo" src="assets/shared/images/currencies/cardano.svg" alt="cardano">
+                                        </div>
+                                        <div class="column amounts">
+                                            <p class="coin-value font-pixel"><span id="wallet-interface-cardano-coin-value">--</span> Coin</p>
+                                            <p class="crypto-amount font-pixel"><span id="wallet-interface-cardano-amount">--</span> ADA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
                     <!-- <div id="presentation-screen">
                         <ul>
                             <li>bitcoin: <span id="bitcoinSpan"></span> Coin</li>
@@ -276,7 +388,7 @@
                     </tr>
                     <tr>
                         <td class="keys"><kbd class="kbd-pixel">Esc</kbd></td>
-                        <td class="action">Close / Menu</td>
+                        <td class="action">Menu / Close</td>
                     </tr>
                 </tbody>
             </table>

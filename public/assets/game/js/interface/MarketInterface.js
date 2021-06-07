@@ -9,7 +9,7 @@ const exchangeAmountResultElement = document.getElementById('exchange-amount-res
 const exchangeBtn = document.getElementById('exchange-btn');
 
 // Wallet
-const walletTablesContainer = document.getElementById('wallet-tables-container');
+const walletTablesContainer = document.getElementById('market-wallet-tables-container');
 const coinAmountElement = document.getElementById('coin-amount');
 const bitcoinCoinValueElement = document.getElementById('bitcoin-coin-value');
 const bitcoinAmountElement = document.getElementById('bitcoin-amount');
