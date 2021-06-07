@@ -13,7 +13,7 @@ const getReconnectFrequency = () => reconnectFrequencySeconds * 1000;
 
 const setupEventSource = () => {
     if (typeof (EventSource) !== 'undefined') {
-        eventSource = new EventSource('http://localhost:3000/sse/registerCryptoUpdates');
+        eventSource = new EventSource('/sse/registerCryptoUpdates');
 
         eventSource.onmessage = (event) => {
             const data = JSON.parse(event.data);
