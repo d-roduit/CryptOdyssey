@@ -11,6 +11,7 @@ import Player from './Player.js';
 import CookieManager from './CookieManager.js';
 import CryptoUpdatesManager from './CryptoUpdatesManager.js';
 import MarketInterface from './interface/MarketInterface.js';
+import { character } from './character.js';
 
 const nbDecimal = 3;
 
@@ -103,7 +104,7 @@ const initializeGameListeners = () => {
     window.addEventListener('keydown', (event) => {
         switch (event.key) {
         case 'e':
-            if (!MarketInterface.isOpen) {
+            if (!MarketInterface.isOpen && character.isInMarketZone) {
                 MarketInterface.show();
             }
             break;
