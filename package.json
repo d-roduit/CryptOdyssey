@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "gulp prodBuild",
-    "dev": "gulp devBuild"
+    "postinstall": "npx gulp prodBuild",
+    "dev": "npx gulp devBuild"
   },
   "author": "",
   "repository": {
