@@ -9,6 +9,8 @@ const context = canvas.getContext('2d');
 const canvasWidth = 1408;
 const canvasHeight = 1120;
 
+let isRunning = true;
+
 // ----------Animation loop-----------------
 let fpsInterval;
 let now;
@@ -17,7 +19,9 @@ let elapsed;
 const tilesheetWidth = 32;
 
 const animate = () => {
-    requestAnimationFrame(animate);
+    if (isRunning) {
+        requestAnimationFrame(animate);
+    }
     now = Date.now();
     elapsed = now - then;
     if (elapsed > fpsInterval) {
@@ -69,6 +73,15 @@ const animate = () => {
         // Mine zone
         Character.defineMineZone(1280, 128, 1312, 160);
     }
+};
+
+export const play = () => {
+    isRunning = true;
+    animate();
+};
+
+export const pause = () => {
+    isRunning = false;
 };
 
 // animation loop based on fps

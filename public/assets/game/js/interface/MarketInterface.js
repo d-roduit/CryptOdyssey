@@ -55,6 +55,7 @@ const MarketInterface = {
         exchangeAmountInput,
         exchangeAmountResultElement,
         exchangeBtn,
+        marketCloseBtn,
         reset() {
             putCurrencyLogoBackIntoOriginalParent(this.fromCurrencyElement);
             putCurrencyLogoBackIntoOriginalParent(this.toCurrencyElement);
@@ -177,8 +178,6 @@ const click = (event) => {
     }
 };
 
-const closeBtnHandler = () => MarketInterface.hide();
-
 const exchangeAmountInputHandler = (event) => {
     const nbDecimal = 3;
 
@@ -257,7 +256,6 @@ toCurrencyElement.addEventListener('drop', drop);
 toCurrencyElement.addEventListener('click', click);
 
 // Initialize all the listeners for the Market interface
-marketCloseBtn.addEventListener('click', closeBtnHandler);
 exchangeAmountInput.addEventListener('keydown', exchangeAmountInputHandler);
 
 export default MarketInterface;

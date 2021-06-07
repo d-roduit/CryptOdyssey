@@ -106,16 +106,23 @@ const initializeGameListeners = () => {
         case 'e':
             if (!MarketInterface.isOpen && character.isInMarketZone) {
                 MarketInterface.show();
+                GameAnimation.pause();
             }
             break;
         case 'Escape':
             if (MarketInterface.isOpen) {
                 MarketInterface.hide();
+                GameAnimation.play();
             }
             break;
         default:
             break;
         }
+    });
+
+    MarketInterface.market.marketCloseBtn.addEventListener('click', () => {
+        MarketInterface.hide();
+        GameAnimation.play();
     });
 
     MarketInterface.market.exchangeAmountInput.addEventListener('input', () => calculateExchange());
