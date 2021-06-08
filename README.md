@@ -1,6 +1,7 @@
 <div align="center">
+            <br/>
             <a href="https://github.com/d-roduit/CryptOdyssey">
-               <img src="readme_pictures/cryptodyssey_logo.png" align="center" width="30%" alt="CryptOdyssey Logo">
+               <img src="readme_pictures/cryptodyssey_logo.png" align="center" width="50%" alt="CryptOdyssey Logo">
    </a>
 
 #
