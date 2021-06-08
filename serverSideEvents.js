@@ -36,13 +36,11 @@ const retrieveCryptoPrices = async () => {
         if (response.ok) {
             const data = await response.json();
 
-            const nbDecimal = 3;
-
-            cryptoPrices.bitcoin = parseFloat(data.bitcoin.usd.toFixed(nbDecimal));
-            cryptoPrices.ethereum = parseFloat(data.ethereum.usd.toFixed(nbDecimal));
-            cryptoPrices.swissborg = parseFloat(data.swissborg.usd.toFixed(nbDecimal));
-            cryptoPrices.tether = parseFloat(data.tether.usd.toFixed(nbDecimal));
-            cryptoPrices.cardano = parseFloat(data.cardano.usd.toFixed(nbDecimal));
+            cryptoPrices.bitcoin = data.bitcoin.usd;
+            cryptoPrices.ethereum = data.ethereum.usd;
+            cryptoPrices.swissborg = data.swissborg.usd;
+            cryptoPrices.tether = data.tether.usd;
+            cryptoPrices.cardano = data.cardano.usd;
         }
     } catch (err) {
         console.log(err);

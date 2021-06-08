@@ -15,8 +15,7 @@ import MenuInterface from './interface/MenuInterface.js';
 import MarketInterface from './interface/MarketInterface.js';
 import WalletInterface from './interface/WalletInterface.js';
 import { character } from './character.js';
-
-const nbDecimal = 3;
+import PriceDisplay from './PriceDisplay.js';
 
 let player = null;
 
@@ -35,21 +34,11 @@ const playerCoinValues = {
     tether: 0,
     cardano: 0,
     update(playerParam, cryptoPricesParam) {
-        this.bitcoin = parseFloat(
-            (playerParam.wallet.crypto.bitcoin * cryptoPricesParam.bitcoin).toFixed(nbDecimal),
-        );
-        this.ethereum = parseFloat(
-            (playerParam.wallet.crypto.ethereum * cryptoPricesParam.ethereum).toFixed(nbDecimal),
-        );
-        this.swissborg = parseFloat(
-            (playerParam.wallet.crypto.swissborg * cryptoPricesParam.swissborg).toFixed(nbDecimal),
-        );
-        this.tether = parseFloat(
-            (playerParam.wallet.crypto.tether * cryptoPricesParam.tether).toFixed(nbDecimal),
-        );
-        this.cardano = parseFloat(
-            (playerParam.wallet.crypto.cardano * cryptoPricesParam.cardano).toFixed(nbDecimal),
-        );
+        this.bitcoin = playerParam.wallet.crypto.bitcoin * cryptoPricesParam.bitcoin;
+        this.ethereum = playerParam.wallet.crypto.ethereum * cryptoPricesParam.ethereum;
+        this.swissborg = playerParam.wallet.crypto.swissborg * cryptoPricesParam.swissborg;
+        this.tether = playerParam.wallet.crypto.tether * cryptoPricesParam.tether;
+        this.cardano = playerParam.wallet.crypto.cardano * cryptoPricesParam.cardano;
     },
 };
 
@@ -61,7 +50,7 @@ const calculateExchange = () => {
         return;
     }
 
-    const amountToExchange = parseFloat(parseFloat(amountToExchangeString).toFixed(nbDecimal));
+    const amountToExchange = PriceDisplay.toFixedTrunc(amountToExchangeString);
 
     const fromCurrencyString = MarketInterface.market.fromCurrencyElement.children[0]?.getAttribute('data-currency');
     const toCurrencyString = MarketInterface.market.toCurrencyElement.children[0]?.getAttribute('data-currency');
@@ -70,13 +59,12 @@ const calculateExchange = () => {
         const fromCurrencyCoinValue = cryptoPrices[fromCurrencyString] ?? 1;
         const toCurrencyCoinValue = cryptoPrices[toCurrencyString] ?? 1;
 
-        const amountToCredit = parseFloat(
-            (
-                (amountToExchange * fromCurrencyCoinValue) / toCurrencyCoinValue
-            ).toFixed(nbDecimal),
-        );
+        const amountToCredit = (amountToExchange * fromCurrencyCoinValue) / toCurrencyCoinValue;
 
-        MarketInterface.market.exchangeAmountResultElement.textContent = amountToCredit;
+        MarketInterface.market.exchangeAmountResultElement.setAttribute('data-realcreditamount', amountToCredit);
+        MarketInterface.market.exchangeAmountResultElement.textContent = (
+            PriceDisplay.toFixedTrunc(amountToCredit)
+        );
     }
 };
 
@@ -196,20 +184,16 @@ const initializeGameListeners = () => {
             return;
         }
 
-        const amountToExchange = parseFloat(parseFloat(amountToExchangeString).toFixed(nbDecimal));
+        const amountToExchange = PriceDisplay.toFixedTrunc(amountToExchangeString);
 
-        const amountToCreditString = (
-            MarketInterface.market.exchangeAmountResultElement.textContent.trim()
-        );
+        const realAmountToCreditString = MarketInterface.market.exchangeAmountResultElement.getAttribute('data-realcreditamount');
 
-        const numberRegex = new RegExp(`^[0-9]+([.][0-9]{0,${nbDecimal}})?$`);
-        const isAmountToCreditStringValid = numberRegex.test(amountToCreditString);
-
-        if (!isAmountToCreditStringValid) {
+        if (!realAmountToCreditString) {
             return;
         }
 
-        const amountToCredit = parseFloat(parseFloat(amountToCreditString).toFixed(nbDecimal));
+        // TODO HERE, recupere le vrai résultat du calcul, et pas le résultat affiché
+        const realAmountToCredit = parseFloat(realAmountToCreditString);
 
         // Represent the amount of "fromCurrency" that the player has in its wallet
         const fromCurrencyPlayerAmount = (
@@ -233,27 +217,19 @@ const initializeGameListeners = () => {
         // Substract from fromCurrency
         if (fromCurrencyString === 'coin') {
             const calculationAnswer = player.wallet[fromCurrencyString] - amountToExchange;
-            player.wallet[fromCurrencyString] = parseFloat(
-                parseFloat(calculationAnswer).toFixed(nbDecimal),
-            );
+            player.wallet[fromCurrencyString] = calculationAnswer;
         } else {
             const calculationAnswer = player.wallet.crypto[fromCurrencyString] - amountToExchange;
-            player.wallet.crypto[fromCurrencyString] = parseFloat(
-                parseFloat(calculationAnswer).toFixed(nbDecimal),
-            );
+            player.wallet.crypto[fromCurrencyString] = calculationAnswer;
         }
 
         // Add to toCurrency
         if (toCurrencyString === 'coin') {
-            const calculationAnswer = player.wallet[toCurrencyString] + amountToCredit;
-            player.wallet[toCurrencyString] = parseFloat(
-                parseFloat(calculationAnswer).toFixed(nbDecimal),
-            );
+            const calculationAnswer = player.wallet[toCurrencyString] + realAmountToCredit;
+            player.wallet[toCurrencyString] = calculationAnswer;
         } else {
-            const calculationAnswer = player.wallet.crypto[toCurrencyString] + amountToCredit;
-            player.wallet.crypto[toCurrencyString] = parseFloat(
-                parseFloat(calculationAnswer).toFixed(nbDecimal),
-            );
+            const calculationAnswer = player.wallet.crypto[toCurrencyString] + realAmountToCredit;
+            player.wallet.crypto[toCurrencyString] = calculationAnswer;
         }
 
         PlayerDB.update(player);

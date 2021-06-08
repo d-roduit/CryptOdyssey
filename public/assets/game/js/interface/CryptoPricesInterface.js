@@ -1,3 +1,5 @@
+import PriceDisplay from '../PriceDisplay.js';
+
 const myself = document.getElementById('crypto-prices-interface');
 const bitcoinPriceElement = document.getElementById('bitcoin-price');
 const ethereumPriceElement = document.getElementById('ethereum-price');
@@ -24,11 +26,11 @@ const CryptoPricesInterface = {
         this.isOpen = false;
     },
     update(cryptoPrices) {
-        this.bitcoinPriceElement.textContent = cryptoPrices.bitcoin;
-        this.ethereumPriceElement.textContent = cryptoPrices.ethereum;
-        this.swissborgPriceElement.textContent = cryptoPrices.swissborg;
-        this.tetherPriceElement.textContent = cryptoPrices.tether;
-        this.cardanoPriceElement.textContent = cryptoPrices.cardano;
+        this.bitcoinPriceElement.textContent = PriceDisplay.toFixedTrunc(cryptoPrices.bitcoin);
+        this.ethereumPriceElement.textContent = PriceDisplay.toFixedTrunc(cryptoPrices.ethereum);
+        this.swissborgPriceElement.textContent = PriceDisplay.toFixedTrunc(cryptoPrices.swissborg);
+        this.tetherPriceElement.textContent = PriceDisplay.toFixedTrunc(cryptoPrices.tether);
+        this.cardanoPriceElement.textContent = PriceDisplay.toFixedTrunc(cryptoPrices.cardano);
     },
 };
 

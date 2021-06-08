@@ -1,3 +1,5 @@
+import PriceDisplay from '../PriceDisplay.js';
+
 const myself = document.getElementById('market-interface');
 
 // Market
@@ -80,17 +82,39 @@ const MarketInterface = {
         cardanoCoinValueElement,
         cardanoAmountElement,
         update(player, playerCoinValues) {
-            this.coinAmountElement.textContent = player.wallet.coin;
-            this.bitcoinCoinValueElement.textContent = playerCoinValues.bitcoin;
-            this.bitcoinAmountElement.textContent = player.wallet.crypto.bitcoin;
-            this.ethereumCoinValueElement.textContent = playerCoinValues.ethereum;
-            this.ethereumAmountElement.textContent = player.wallet.crypto.ethereum;
-            this.swissborgCoinValueElement.textContent = playerCoinValues.swissborg;
-            this.swissborgAmountElement.textContent = player.wallet.crypto.swissborg;
-            this.tetherCoinValueElement.textContent = playerCoinValues.tether;
-            this.tetherAmountElement.textContent = player.wallet.crypto.tether;
-            this.cardanoCoinValueElement.textContent = playerCoinValues.cardano;
-            this.cardanoAmountElement.textContent = player.wallet.crypto.cardano;
+            this.coinAmountElement.textContent = (
+                PriceDisplay.toFixedTrunc(player.wallet.coin)
+            );
+            this.bitcoinCoinValueElement.textContent = (
+                PriceDisplay.toFixedTrunc(playerCoinValues.bitcoin)
+            );
+            this.bitcoinAmountElement.textContent = (
+                PriceDisplay.toFixedTrunc(player.wallet.crypto.bitcoin)
+            );
+            this.ethereumCoinValueElement.textContent = (
+                PriceDisplay.toFixedTrunc(playerCoinValues.ethereum)
+            );
+            this.ethereumAmountElement.textContent = (
+                PriceDisplay.toFixedTrunc(player.wallet.crypto.ethereum)
+            );
+            this.swissborgCoinValueElement.textContent = (
+                PriceDisplay.toFixedTrunc(playerCoinValues.swissborg)
+            );
+            this.swissborgAmountElement.textContent = (
+                PriceDisplay.toFixedTrunc(player.wallet.crypto.swissborg)
+            );
+            this.tetherCoinValueElement.textContent = (
+                PriceDisplay.toFixedTrunc(playerCoinValues.tether)
+            );
+            this.tetherAmountElement.textContent = (
+                PriceDisplay.toFixedTrunc(player.wallet.crypto.tether)
+            );
+            this.cardanoCoinValueElement.textContent = (
+                PriceDisplay.toFixedTrunc(playerCoinValues.cardano)
+            );
+            this.cardanoAmountElement.textContent = (
+                PriceDisplay.toFixedTrunc(player.wallet.crypto.cardano)
+            );
         },
     },
     isOpen: false,
