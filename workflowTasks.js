@@ -14,7 +14,6 @@
  * Date: 29.04.2021
  */
 
-const { parallel } = require('gulp');
 const { exec } = require('child_process');
 const nodemon = require('nodemon');
 
@@ -41,6 +40,11 @@ async function compileSass() {
     exec(`npx sass ${cssRoutes.game.src}:${cssRoutes.game.dist} ${cssRoutes.website.src}:${cssRoutes.website.dist} --style=compressed --source-map`);
 }
 
+async function compileAndWatchSassAndStartAutoReloadServer() {
+    compileAndWatchSass();
+    startAutoReloadServer();
+}
+
 /**
  * This function is only used to create the DB files during the build phase
  * of Heroku, to bypass the later ephemeral filesystem where you cannot create files anymore.
@@ -61,5 +65,7 @@ async function compileSass() {
 //     });
 // }
 
-exports.devBuild = parallel(compileAndWatchSass, startAutoReloadServer);
-exports.prodBuild = compileSass;
+module.exports = {
+    devBuild: compileAndWatchSassAndStartAutoReloadServer,
+    prodBuild: compileSass,
+};

@@ -23,6 +23,9 @@
             "object": false
           }, {
             "enforceForRenamedProperties": false
-          }]
+          }],
+        "import/no-extraneous-dependencies": ["error", {
+            "devDependencies": true
+        }]
     }
 }
