@@ -1,10 +1,17 @@
-export const myself = document.getElementById('end-tutorial-screen');
-export const goToGameBtn = document.getElementById('go-to-game');
+const myself = document.getElementById('end-tutorial-screen');
+const goToGameBtn = document.getElementById('go-to-game');
 
-export const show = () => {
+const show = () => {
     myself.style.display = 'flex';
 };
 
-export const hide = () => {
+const hide = () => {
     myself.style.display = 'none';
+};
+
+export default {
+    myself,
+    goToGameBtn,
+    show,
+    hide,
 };

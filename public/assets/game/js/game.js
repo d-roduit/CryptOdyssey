@@ -1,11 +1,11 @@
 import countriesInfo from './countriesInfo.js';
-import * as PresentationScreen from './screens/PresentationScreen.js';
+import PresentationScreen from './screens/PresentationScreen.js';
 import PlayerInfoScreen from './screens/PlayerInfoScreen.js';
-import * as IntroductionTutorialScreen from './screens/IntroductionTutorialScreen.js';
-import * as MarketTutorialScreen from './screens/MarketTutorialScreen.js';
-import * as MineTutorialScreen from './screens/MineTutorialScreen.js';
-import * as EndTutorialScreen from './screens/EndTutorialScreen.js';
-import * as GameAnimation from './gameAnimation.js';
+import IntroductionTutorialScreen from './screens/IntroductionTutorialScreen.js';
+import MarketTutorialScreen from './screens/MarketTutorialScreen.js';
+import MineTutorialScreen from './screens/MineTutorialScreen.js';
+import EndTutorialScreen from './screens/EndTutorialScreen.js';
+import GameAnimation from './gameAnimation.js';
 import PlayerDB from './PlayerDB.js';
 import Player from './Player.js';
 import CookieManager from './CookieManager.js';
@@ -14,7 +14,7 @@ import CryptoUpdatesManager from './CryptoUpdatesManager.js';
 import MenuInterface from './interface/MenuInterface.js';
 import MarketInterface from './interface/MarketInterface.js';
 import WalletInterface from './interface/WalletInterface.js';
-import { character } from './character.js';
+import Character from './character.js';
 import PriceDisplay from './PriceDisplay.js';
 
 let player = null;
@@ -99,7 +99,7 @@ const initializeGameListeners = () => {
             break;
         case 'e':
             if (!MenuInterface.isOpen) {
-                if (character.isInMarketZone) {
+                if (Character.character.isInMarketZone) {
                     CryptoPricesInterface.hide();
                     MarketInterface.show();
                     GameAnimation.pause();

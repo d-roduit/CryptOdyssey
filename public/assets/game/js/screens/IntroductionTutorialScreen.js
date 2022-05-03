@@ -1,11 +1,19 @@
-export const myself = document.getElementById('introduction-tutorial-screen');
-export const playernameSpan = document.getElementById('introduction-tutorial-screen-playername');
-export const goToMarketTutorialScreenBtn = document.getElementById('go-to-market-tutorial-screen');
+const myself = document.getElementById('introduction-tutorial-screen');
+const playernameSpan = document.getElementById('introduction-tutorial-screen-playername');
+const goToMarketTutorialScreenBtn = document.getElementById('go-to-market-tutorial-screen');
 
-export const show = () => {
+const show = () => {
     myself.style.display = 'flex';
 };
 
-export const hide = () => {
+const hide = () => {
     myself.style.display = 'none';
+};
+
+export default {
+    myself,
+    playernameSpan,
+    goToMarketTutorialScreenBtn,
+    show,
+    hide,
 };

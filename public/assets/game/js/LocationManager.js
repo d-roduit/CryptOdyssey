@@ -57,4 +57,7 @@ const getUserCountryCode = async () => {
 
 const getCountryInfo = (countryCode) => countriesInfo[countryCode] ?? countriesInfo.DEFAULT;
 
-export { getUserCountryCode, getCountryInfo };
+export default {
+    getUserCountryCode,
+    getCountryInfo,
+};

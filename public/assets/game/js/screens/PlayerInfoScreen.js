@@ -1,5 +1,5 @@
 import countriesInfo from '../countriesInfo.js';
-import * as LocationManager from '../LocationManager.js';
+import LocationManager from '../LocationManager.js';
 
 class PlayerCountrySelect {
     constructor() {

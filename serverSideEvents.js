@@ -1,5 +1,5 @@
 /* eslint-disable no-await-in-loop */
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 let clients = [];
 let isSendingCryptoUpdates = false;
@@ -103,4 +103,4 @@ const register = (request, response) => {
     }
 };
 
-module.exports = { register };
+export default { register };

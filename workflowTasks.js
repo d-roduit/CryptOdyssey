@@ -14,8 +14,8 @@
  * Date: 29.04.2021
  */
 
-const { exec } = require('child_process');
-const nodemon = require('nodemon');
+import { exec } from 'child_process';
+import nodemon from 'nodemon';
 
 const cssRoutes = {
     game: {
@@ -65,7 +65,7 @@ async function compileAndWatchSassAndStartAutoReloadServer() {
 //     });
 // }
 
-module.exports = {
+export default {
     devBuild: compileAndWatchSassAndStartAutoReloadServer,
     prodBuild: compileSass,
 };

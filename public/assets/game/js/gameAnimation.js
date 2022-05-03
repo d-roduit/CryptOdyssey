@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-import * as Character from './character.js';
-import * as Map from './map.js';
+import Character from './character.js';
+import Map from './map.js';
 
 const canvas = document.getElementById('game-canvas');
 
@@ -75,23 +75,24 @@ const animate = () => {
     }
 };
 
-export const play = () => {
+const play = () => {
     isRunning = true;
     animate();
 };
 
-export const pause = () => {
+const pause = () => {
     isRunning = false;
 };
 
 // animation loop based on fps
-export const startAnimating = (fps) => {
+const startAnimating = (fps) => {
     fpsInterval = 1000 / fps; // how long we wait before we serve the next frame
     then = Date.now();
     animate();
 };
 
-// Market zone
-export const isInMarketZone = (openInterface) => {
-    Character.defineOpeningZone(544, 384, 640, 448, openInterface);
+export default {
+    play,
+    pause,
+    startAnimating,
 };

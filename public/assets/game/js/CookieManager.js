@@ -28,4 +28,8 @@ const getCookie = (cookieName) => {
     return '';
 };
 
-export default { cookies, setCookie, getCookie };
+export default {
+    cookies,
+    setCookie,
+    getCookie,
+};

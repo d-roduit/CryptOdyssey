@@ -1,6 +1,6 @@
-const express = require('express');
-const sse = require('./serverSideEvents.js');
-const db = require('./database.js');
+import express from 'express';
+import sse from './serverSideEvents.js';
+import db from './database.js';
 
 const port = process.env.PORT || 3000;
 

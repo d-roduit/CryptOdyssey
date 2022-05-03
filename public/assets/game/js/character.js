@@ -1,7 +1,7 @@
-import * as Map from './map.js';
+import Map from './map.js';
 
 /* eslint-disable max-len */
-export const character = {
+const character = {
     x: 1000, // horizontal position
     y: 300, // vertical position
     width: 64,
@@ -17,11 +17,11 @@ export const character = {
 // ----------Spritesheets------------------
 
 // Male character
-export const tilesheetMale = new Image();
+const tilesheetMale = new Image();
 tilesheetMale.src = 'assets/game/images/character_boy_main.png';
 
 // ----------Draw Sprite--------------------
-export const drawSprite = (context, img, sX, sY, sW, sH, dX, dY, dW, dH) => {
+const drawSprite = (context, img, sX, sY, sW, sH, dX, dY, dW, dH) => {
     context.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH);
 };
 
@@ -60,7 +60,7 @@ const arrayAlreadyHasArray = (arr, subarr) => {
 };
 
 // -------------Move player-----------------
-export const movePlayer = (canvas) => {
+const movePlayer = (canvas) => {
     if (keys.w && character.y > 0 && !arrayAlreadyHasArray(Map.collisionBlocksUp, [character.x, character.y])) {
         character.y -= character.speed;
         character.frameY = 8;
@@ -83,7 +83,7 @@ export const movePlayer = (canvas) => {
     }
 };
 
-export const handlePlayerFrame = () => {
+const handlePlayerFrame = () => {
     if (character.frameX < 8 && character.moving) {
         character.frameX += 1;
     } else {
@@ -94,7 +94,7 @@ export const handlePlayerFrame = () => {
 // ----------------Open interface--------------
 
 // define market zone
-export const defineMarketZone = (posTopLeftX, posTopLeftY, posBottomRightX, posBottomRightY) => {
+const defineMarketZone = (posTopLeftX, posTopLeftY, posBottomRightX, posBottomRightY) => {
     const charPosX = character.x + character.width / 2;
     const charPosY = character.y + character.height;
     if (charPosX > posTopLeftX && charPosX < posBottomRightX && charPosY > posTopLeftY && charPosY < posBottomRightY) {
@@ -105,7 +105,7 @@ export const defineMarketZone = (posTopLeftX, posTopLeftY, posBottomRightX, posB
 };
 
 // define market zone
-export const defineMineZone = (posTopLeftX, posTopLeftY, posBottomRightX, posBottomRightY) => {
+const defineMineZone = (posTopLeftX, posTopLeftY, posBottomRightX, posBottomRightY) => {
     const charPosX = character.x + character.width / 2;
     const charPosY = character.y + character.height;
     if (charPosX > posTopLeftX && charPosX < posBottomRightX && charPosY > posTopLeftY && charPosY < posBottomRightY) {
@@ -113,4 +113,14 @@ export const defineMineZone = (posTopLeftX, posTopLeftY, posBottomRightX, posBot
     } else {
         character.isInMineZone = false;
     }
+};
+
+export default {
+    character,
+    tilesheetMale,
+    drawSprite,
+    movePlayer,
+    handlePlayerFrame,
+    defineMarketZone,
+    defineMineZone,
 };

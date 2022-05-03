@@ -1,4 +1,4 @@
-const Datastore = require('nedb');
+import Datastore from 'nedb';
 
 const db = new Datastore({ filename: './players.db', autoload: true });
 
@@ -39,7 +39,7 @@ const updatePlayer = (req, res) => {
     res.status(200).end();
 };
 
-module.exports = {
+export default {
     getPlayer,
     savePlayer,
     updatePlayer,
