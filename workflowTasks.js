@@ -65,7 +65,7 @@ async function compileAndWatchSassAndStartAutoReloadServer() {
 //     });
 // }
 
-export default {
-    devBuild: compileAndWatchSassAndStartAutoReloadServer,
-    prodBuild: compileSass,
+export {
+    compileAndWatchSassAndStartAutoReloadServer as devBuild,
+    compileSass as prodBuild,
 };
