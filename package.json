@@ -26,7 +26,7 @@
     "eslint-plugin-import": "^2.26.0",
     "nodemon": "^3.1.4",
     "run-func": "^3.0.0",
-    "sass": "^1.54.3"
+    "sass": "^1.77.6"
   },
   "browserslist": [
     "defaults"
